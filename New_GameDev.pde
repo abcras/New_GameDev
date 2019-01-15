@@ -6,6 +6,7 @@ SoundFile MenuSound2;
 void setup() {
   size(800, 400);
   G = new Game();
+  //wauw
   //MenuSound = new SoundFile(this, "Great Fairy's Fountain Theme.mp3");
   //MenuSound2 = new SoundFile(this, "Kingdom Hearts 2 - Dearly Beloved II.mp3");
   //MenuSound2.loop();
