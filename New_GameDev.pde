@@ -6,7 +6,6 @@ SoundFile MenuSound2;
 void setup() {
   size(800, 400);
   G = new Game();
-  //geh
   //MenuSound = new SoundFile(this, "Great Fairy's Fountain Theme.mp3");
   //MenuSound2 = new SoundFile(this, "Kingdom Hearts 2 - Dearly Beloved II.mp3");
   //MenuSound2.loop();
@@ -52,8 +51,7 @@ void keyPressed() {
     break;
   case ESC:
     keys[9] = true;
-    // Key = 0 sørger for at esc ikke lukker programet
-    //key = 0;
+    key = 0;
     break;
   }
 }
@@ -66,37 +64,45 @@ void keyReleased() {
     break;
   case 'a':
     keys[1] = false;
-    G.T.Bt1 = 0;
+    G.T.Bt1=0;
     break;
   case 's':
     keys[2] = false;
-    G.T.Bt1 = 0;
+    G.T.Bt1=0;
     break;
   case 'd':
     keys[3] = false;
-    G.T.Bt1 = 0;
+    G.T.Bt1=0;
     break;
   case 'w':
     keys[4] = false;
-    G.T.Bt1 = 0;
+    G.T.Bt1=0;
     break;
   }
   switch (keyCode) {
   case RIGHT:
     keys[5] = false;
-    G.T.Bt2 = 0;
+    G.T.Bt2=0;
     break;
   case LEFT:
     keys[6] = false;
-    G.T.Bt2 = 0;
+    G.T.Bt2=0;
     break;
   case DOWN:
     keys[7] = false;
-    G.T.Bt2 = 0;
+    G.T.Bt2=0;
     break;
   case UP:
     keys[8] = false;
-    G.T.Bt2 = 0;
+    G.T.Bt2=0;
+    break;
+  case ESC:
+    keys[9] = false;
+    key = 0;
+    if (G.T.es2 == 1) {
+      G.T.es=0;
+    }
+
     break;
   }
 }

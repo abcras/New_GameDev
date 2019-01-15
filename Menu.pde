@@ -3,12 +3,16 @@ class Menu {
   PFont f;
 
   PVector MLoc = new PVector(mouseX, mouseY);
-  int cc = 255;
-  int cn = 255;
-  int cl = 255;
+  int cc;
+  int cn;
+  int cl;
+  int km;
+  int ek;
   boolean cont = false;
   boolean Load = false;
   boolean NewG = false;
+  boolean KeyM = false;
+  boolean eks = false;
 
 
   Menu() {
@@ -69,11 +73,40 @@ class Menu {
     }
   }
 
+  void keymenu() {
+    fill(km, 255, 255);
+    stroke(0);
+    strokeWeight(2);
+    rect(width-80, 0, 80, 80);
 
+    if (mouseX>=720 && mouseX<=800 && mouseY>=0 && mouseY<=80) {
+      km = 0;
+      KeyM = true;
+    } else {
+      km = 255;
+      KeyM = false;
+    }
+  }
+  
+  void eksit() {
+    fill(255, ek, 255);
+    stroke(0);
+    strokeWeight(2);
+    rect(0, 0, 80, 80);
+
+    if (mouseX>=0 && mouseX<=80 && mouseY>=0 && mouseY<=80) {
+      ek = 0;
+      eks = true;
+    } else {
+      ek = 255;
+      eks = false;
+    }
+  }
+ 
   void run() {
 
-
-
+eksit();
+    keymenu();
     lvlChoiceBox();
     lvlChioiceLogic();
 

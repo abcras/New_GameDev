@@ -54,7 +54,7 @@ class NewGame {
   }
 
   void bordlogic() {    
-    if (mouseX>=width*1/8 && mouseX<=width*1/8+150 && mouseY>=50 && mouseY<= 50+height*1/4) {
+     if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       cho = 0;
       LVL1 = true;
     } else {
