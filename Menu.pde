@@ -1,18 +1,15 @@
 class Menu {
-  Game G;
-  PFont f;
 
+  PFont f;
+  int t;
   PVector MLoc = new PVector(mouseX, mouseY);
   int cc;
   int cn;
   int cl;
   int km;
   int ek;
-  boolean cont = false;
-  boolean Load = false;
-  boolean NewG = false;
-  boolean KeyM = false;
-  boolean eks = false;
+  boolean[] screen = new boolean[6];
+  
 
 
   Menu() {
@@ -31,7 +28,7 @@ class Menu {
     fill(cn, 255, cn);
     stroke(0);
     strokeWeight(2);
-    rect(width*2/8+99, height*3/4-20, width*2/8, height/4-20);
+    rect(width*3/8, height*3/4-20, width*2/8, height/4-20);
     fill(0, 0, 0);
     textFont(f, 26);
     textAlign(CENTER);
@@ -52,28 +49,29 @@ class Menu {
 
     if (mouseX>=66 && mouseX<=266&&mouseY>=280&&mouseY<=360) {
       cc = 0;
-      cont = true;
+      screen[0] = true;
     } else {
       cc = 255;
-      cont = false;
+      screen[0] = false;
     }
-    if (mouseX>=299 && mouseX<=499 && mouseY>=280 && mouseY<=360) {
+    if (mouseX>=300 && mouseX<=499 && mouseY>=280 && mouseY<=360) {
       cn = 0;
-      NewG = true;
+      screen[2] = true;
     } else {
       cn = 255;
-      NewG = false;
+      screen[2] = false;
     }
     if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
       cl = 0;
-      Load = true;
+      screen[1] = true;
     } else {
       cl = 255;
-      Load = false;
+      screen[1] = false;
     }
   }
 
   void keymenu() {
+    t++;
     fill(km, 255, 255);
     stroke(0);
     strokeWeight(2);
@@ -81,31 +79,32 @@ class Menu {
 
     if (mouseX>=720 && mouseX<=800 && mouseY>=0 && mouseY<=80) {
       km = 0;
-      KeyM = true;
+      screen[3] = true;
     } else {
       km = 255;
-      KeyM = false;
+      screen[3] = false;
     }
   }
-  
+
   void eksit() {
     fill(255, ek, 255);
     stroke(0);
     strokeWeight(2);
     rect(0, 0, 80, 80);
 
-    if (mouseX>=0 && mouseX<=80 && mouseY>=0 && mouseY<=80) {
+    if (mouseX>=0 && mouseX<=80 && mouseY>=0 && mouseY<=80 && t >= 10) {
+
       ek = 0;
-      eks = true;
-    } else {
+      screen[4] = true;
+    } else { 
       ek = 255;
-      eks = false;
+      screen[4] = false;
     }
   }
- 
+
   void run() {
 
-eksit();
+    eksit();
     keymenu();
     lvlChoiceBox();
     lvlChioiceLogic();

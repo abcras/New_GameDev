@@ -1,11 +1,12 @@
 class Game {
 
 
+
   boolean es;
-  boolean hej;
-  int loc = 0;
+  int loc = 0;  
+  Timer T = new Timer();
   Menu M = new Menu();
-  NewGame Ng = new NewGame();  
+  NewGame Ng = new  NewGame();  
   LoadGame Lg =  new LoadGame();
   Keymenu Km = new Keymenu();
   GameBoard Gb = new GameBoard();
@@ -14,21 +15,25 @@ class Game {
   LogikWC Wc = new LogikWC();
   LogikWP Wp = new LogikWP();
   ProgessBar Pb = new ProgessBar();
-  Timer T = new Timer();
+
 
   Game() {
   }
   void skift() {
-    if (mousePressed && M.NewG) { 
+    if (mousePressed && Km.leave) { 
+      loc = 0;
+      println("hej", loc);
+    }
+    if (mousePressed && M.screen[2]) { 
       loc = 1;
     }
-    if (mousePressed && M.Load) { 
+    if (mousePressed && M.screen[1]) { 
       loc = 2;
     }
-    if (mousePressed && M.KeyM) {
+    if (mousePressed && M.screen[3]) {
       loc = 3;
     }
-    if (mousePressed && M.cont) { 
+    if (mousePressed && M.screen[0]) { 
       loc = 4;
     }
     if (mousePressed && Ng.LVL1) { 
@@ -37,43 +42,36 @@ class Game {
     if (mousePressed && Lg.LVL[0]) { 
       loc = 4;
     }
-    if (mousePressed && M.eks) { 
+    if (mousePressed && M.screen[4]) { 
       loc = 5;
     }
-    if (T.es == 1 && Ec.es) { 
-      if (keys[9]) {
-        hej=true;
-      } else {
-        hej=false;
-      }
+    if (mousePressed && Ec.Opt[1]) {
+    }
+    if (mousePressed && Ec.Opt[2]) { 
+      loc = 0;
     }
   }
 
   void run() {
 
-
+    println("buhhh", loc, M.t);
     skift();//det er en place holder
     switch (loc) {
 
     case 0:
-
-      es = false;
-
-
-
       M.run();
       break;
 
     case 1:
-      Ng.run();
+      Ng.run(); Ec.run();
       break; 
 
     case 2:
-      Lg.run();
+      Lg.run(); Ec.run();
       break;
 
     case 3:
-      Km.run();
+      Km.run(); Ec.run();
       break;
 
     case 4:
@@ -81,13 +79,13 @@ class Game {
       Pb.run();
       Gb.run();
       Wp.run();
-      Wc.run();
+      Wc.run(); Ec.run();
       break;
 
     case 5: 
       exit();
       break;
     }
-    Ec.run();
+   
   }
 }
