@@ -32,8 +32,8 @@ class escMenu {
       G.M.screen[0]=false;
       G.M.screen[1]=false;
       G.M.screen[2]=false;
-      G.M.screen[3]=false; G.M.screen[4]=false;
-     
+      G.M.screen[3]=false; 
+      G.M.screen[4]=false;
     } else {
       chol[2] = 255;
       Opt[2] = false;
