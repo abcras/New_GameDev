@@ -40,12 +40,6 @@ class Game {
     if (mousePressed && M.eks) { 
       loc = 5;
     }
-    if (T.es == 1 && Ec.es) { 
-      if (keys[9]) {
-       G.T.es2 = 1;
-      
-      }
-    }
   }
 
   void run() {

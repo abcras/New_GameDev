@@ -99,10 +99,7 @@ void keyReleased() {
   case ESC:
     keys[9] = false;
     key = 0;
-    if (G.T.es2 == 1) {
-      G.T.es=0;
-    }
-
+    G.T.es = 0;
     break;
   }
 }

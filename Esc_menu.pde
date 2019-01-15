@@ -1,6 +1,5 @@
 class escMenu {
 
-  boolean cs = false;
   boolean es = false;
   escMenu() {
   }
@@ -16,21 +15,18 @@ class escMenu {
     rect(width*3/8, 0, width*2/8, height);
   }
 
-  void closes() {
+  void open() {
     if (keys[9] && G.T.es==0) {
       G.T.es=1;
-      es = true;
+      es = !es;
     }
   }
 
   void run() {
-    if (es && G.T.es == 1) {
+    open();
+    if (es) {
       display();
-     
       cs = true;
-    } else { 
-
-      closes();
     }
   }
 }
