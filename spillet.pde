@@ -5,6 +5,7 @@ class Game {
   boolean es;
   int loc = 0;  
   Timer T = new Timer();
+
   Menu M = new Menu();
   NewGame Ng = new  NewGame();  
   LoadGame Lg =  new LoadGame();
@@ -15,7 +16,7 @@ class Game {
   LogikWC Wc = new LogikWC();
   LogikWP Wp = new LogikWP();
   ProgessBar Pb = new ProgessBar();
-
+  Level level = new Level(Lg.levelCode);
 
   Game() {
   }
@@ -48,10 +49,10 @@ class Game {
       loc = 4;
     }
     if (mousePressed && M.screen[4]) { 
-      loc = 5;
+      loc = -1;
     }  
     if (mousePressed && Ec.Opt[3]) {
-      loc = 5;
+      loc = -1;
     }
   }
 
@@ -60,6 +61,10 @@ class Game {
 
     skift();//det er en place holder
     switch (loc) {
+
+    case -1: 
+      exit();
+      break;
 
     case 0:
       M.run();
@@ -81,6 +86,7 @@ class Game {
       break;
 
     case 4:
+      level.run();
       T.run();
       Pb.run();
       Gb.run();
@@ -89,8 +95,8 @@ class Game {
       Ec.run();
       break;
 
-    case 5: 
-      exit();
+    case 5:
+
       break;
     }
   }

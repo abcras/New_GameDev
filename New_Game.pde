@@ -2,6 +2,7 @@ class NewGame {
   PFont f; 
   boolean LVL1 = false;
   int cho = 255;
+
   NewGame() {
   }
 
@@ -57,6 +58,7 @@ class NewGame {
      if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       cho = 0;
       LVL1 = true;
+
     } else {
       cho = 255;
       LVL1 = false;

@@ -2,7 +2,7 @@ class LoadGame {
   PFont f; 
   boolean[] LVL = new boolean[12];
   int[] chol = new int[12];
-
+  int levelCode = 0;
 
 
   LoadGame() {
@@ -148,6 +148,7 @@ class LoadGame {
     if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       chol[0] = 0;
       LVL[0] = true;
+      levelCode = 1;
     } else {
       chol[0] = 255;
       LVL[0] = false;
@@ -155,6 +156,7 @@ class LoadGame {
     if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       chol[1] = 0;
       //LVL2 = true;
+      levelCode = 2;
     } else {
       chol[1] = 255;
       //LVL2 = false;
@@ -162,6 +164,7 @@ class LoadGame {
     if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       chol[2] = 0;
       //LVL3 = true;
+      levelCode = 3;
     } else {
       chol[2] = 255;
       //LVL3 = false;
