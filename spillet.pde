@@ -42,9 +42,8 @@ class Game {
     }
     if (T.es == 1 && Ec.es) { 
       if (keys[9]) {
-        hej=true;
-      } else {
-        hej=false;
+       G.T.es2 = 1;
+      
       }
     }
   }
