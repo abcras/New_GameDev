@@ -34,6 +34,19 @@ class escMenu {
       G.M.screen[2]=false;
       G.M.screen[3]=false; 
       G.M.screen[4]=false;
+      G.Ng.LVL1 = false;
+      G.Lg.LVL[1]=false; 
+      G.Lg.LVL[0]=false; 
+      G.Lg.LVL[2]=false; 
+      G.Lg.LVL[3]=false; 
+      G.Lg.LVL[4]=false; 
+      G.Lg.LVL[5]=false; 
+      G.Lg.LVL[6]=false; 
+      G.Lg.LVL[7]=false; 
+      G.Lg.LVL[8]=false; 
+      G.Lg.LVL[9]=false; 
+      G.Lg.LVL[10]=false; 
+      G.Lg.LVL[11]=false;
     } else {
       chol[2] = 255;
       Opt[2] = false;

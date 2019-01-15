@@ -57,7 +57,7 @@ class Game {
 
   void run() {
 
-
+    println(loc);
     skift();//det er en place holder
     switch (loc) {
 
