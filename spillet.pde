@@ -22,7 +22,12 @@ class Game {
   void skift() {
     if (mousePressed && Km.leave) { 
       loc = 0;
-      println("hej", loc);
+    }
+
+    if (mousePressed && Ec.Opt[1]) {
+    }
+    if (mousePressed && Ec.Opt[2]) { 
+      loc = 0;
     }
     if (mousePressed && M.screen[2]) { 
       loc = 1;
@@ -44,17 +49,15 @@ class Game {
     }
     if (mousePressed && M.screen[4]) { 
       loc = 5;
-    }
-    if (mousePressed && Ec.Opt[1]) {
-    }
-    if (mousePressed && Ec.Opt[2]) { 
-      loc = 0;
+    }  
+    if (mousePressed && Ec.Opt[3]) {
+      loc = 5;
     }
   }
 
   void run() {
 
-    println("buhhh", loc, M.t);
+
     skift();//det er en place holder
     switch (loc) {
 
@@ -63,15 +66,18 @@ class Game {
       break;
 
     case 1:
-      Ng.run(); Ec.run();
+      Ng.run(); 
+      Ec.run();
       break; 
 
     case 2:
-      Lg.run(); Ec.run();
+      Lg.run(); 
+      Ec.run();
       break;
 
     case 3:
-      Km.run(); Ec.run();
+      Km.run(); 
+      Ec.run();
       break;
 
     case 4:
@@ -79,13 +85,13 @@ class Game {
       Pb.run();
       Gb.run();
       Wp.run();
-      Wc.run(); Ec.run();
+      Wc.run(); 
+      Ec.run();
       break;
 
     case 5: 
       exit();
       break;
     }
-   
   }
 }
