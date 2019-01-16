@@ -34,7 +34,7 @@ class escMenu {
       G.M.screen[2]=false;
       G.M.screen[3]=false; 
       G.M.screen[4]=false;
-      G.Ng.LVL1 = false;
+
       G.Lg.LVL[1]=false; 
       G.Lg.LVL[0]=false; 
       G.Lg.LVL[2]=false; 
@@ -69,39 +69,39 @@ class escMenu {
     textAlign(CENTER);
     rect(width*3/8, 0, width*2/8, height);
 
-    fill(255, chol[0], 255);
+    fill(255, 255, chol[0]);
     stroke(0);
     strokeWeight(2);
     rect(width*3/8, 0, width*2/8, height*1/4);
     textAlign(CENTER);
-    fill(0, 255, 255);
+    fill(255, 0, 255);
     textFont(f, 26);
     text("Continue", 400, 60);
 
-    fill(255, chol[1], 255);
+    fill(255, 255, chol[1]);
     stroke(0);
     strokeWeight(2);
     rect(width*3/8, height*1/4, width*2/8, height*1/4);
     textAlign(CENTER);
-    fill(0, 255, 255);
+    fill(255, 0, 255);
     textFont(f, 26);
     text("Restart", 400, 160);
 
-    fill(255, chol[2], 255);
+    fill(255, 255, chol[2]);
     stroke(0);
     strokeWeight(2);
     rect(width*3/8, height*2/4, width*2/8, height*1/4);
     textAlign(CENTER);
-    fill(0, 255, 255);
+    fill(255, 0, 255);
     textFont(f, 26);
     text("Main Menu", 400, 260);
 
-    fill(255, chol[3], 255);
+    fill(255, 255, chol[3]);
     stroke(0);
     strokeWeight(2);
     rect(width*3/8, height*3/4, width*2/8, height*1/4);
     textAlign(CENTER);
-    fill(0, 255, 255);
+    fill(255, 0, 255);
     textFont(f, 26);
     text("Close Game", 400, 360);
 
