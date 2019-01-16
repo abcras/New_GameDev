@@ -2,12 +2,11 @@ class Game {
 
 
 
-  int nr=255;
+  int nr;
   int loc = 0;  
   Timer T = new Timer();
 
   Menu M = new Menu();
- 
   LoadGame Lg =  new LoadGame();
   Keymenu Km = new Keymenu();
   GameBoard Gb = new GameBoard();
@@ -28,8 +27,7 @@ class Game {
       loc = 0;
     }
 
-    if (mousePressed && Ec.Opt[1]) {
-    }
+
     if (mousePressed && Ec.Opt[2]) { 
 
       loc = 0;
@@ -47,7 +45,7 @@ class Game {
     if (mousePressed && M.screen[0]) { 
       loc = 3;
     }
-  
+
     if (mousePressed && Lg.LVL[0]) { 
       loc = 3;
     }
@@ -64,6 +62,8 @@ class Game {
 
     skift();//det er en place holder
     switch (loc) {
+
+
 
     case -1: 
       exit();

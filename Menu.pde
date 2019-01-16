@@ -9,7 +9,7 @@ class Menu {
   int km;
   int ek;
   boolean[] screen = new boolean[6];
-  
+
 
 
   Menu() {
@@ -62,7 +62,7 @@ class Menu {
       screen[2] = false;
     }
     if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
-      G.nr=255;
+      G.nr=11;
       cl = 0;
       screen[1] = true;
     } else {

@@ -17,6 +17,7 @@ class LoadGame {
     text("Load Game", width*4/8, 40);
     textAlign(LEFT);
 
+
     fill(chol[0], 255, chol[0]);
     stroke(0);
     strokeWeight(2);
@@ -29,7 +30,10 @@ class LoadGame {
 
 
 
-    fill(chol[1]*G.nr, 255*G.nr, chol[1]*G.nr);
+    fill(chol[1], 255, chol[1] );
+    if (G.nr < 1) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*2/8+50, 50, 150, height*1/4);     
@@ -40,7 +44,10 @@ class LoadGame {
     textAlign(LEFT);
 
 
-    fill(chol[2]*G.nr, 255*G.nr, chol[2]*G.nr);
+    fill(chol[2], 255, chol[2] );
+    if (G.nr < 2) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*3/8+100, 50, 150, height*1/4);  
@@ -51,7 +58,10 @@ class LoadGame {
     textAlign(LEFT);
 
 
-    fill(chol[3]*G.nr, 255*G.nr, chol[3]*G.nr);
+    fill(chol[3], 255, chol[3] );
+    if (G.nr < 3) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*4/8+150, 50, 150, height*1/4);
@@ -61,7 +71,10 @@ class LoadGame {
     text("LvL4", width*4/8+225, 110);
     textAlign(LEFT);
 
-    fill(chol[4]*G.nr, 255*G.nr, chol[4]*G.nr);
+    fill(chol[4], 255, chol[4] );
+    if (G.nr < 4) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*1/8, 150, 150, height*1/4); 
@@ -72,7 +85,10 @@ class LoadGame {
     textAlign(LEFT);
 
 
-    fill(chol[5]*G.nr, 255*G.nr, chol[5]*G.nr);
+    fill(chol[5], 255, chol[5] );
+    if (G.nr < 5) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*2/8+50, 150, 150, height*1/4);     
@@ -82,7 +98,10 @@ class LoadGame {
     text("LvL6", width*2/8+125, 210);
     textAlign(LEFT);
 
-    fill(chol[6]*G.nr, 255*G.nr, chol[6]*G.nr);
+    fill(chol[6], 255, chol[6] );
+    if (G.nr < 6) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*3/8+100, 150, 150, height*1/4);      
@@ -92,7 +111,10 @@ class LoadGame {
     text("LvL7", width*3/8+175, 210);
     textAlign(LEFT); 
 
-    fill(chol[7]*G.nr, 255*G.nr, chol[7]*G.nr);
+    fill(chol[7], 255, chol[7] );
+    if (G.nr < 7) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*4/8+150, 150, 150, height*1/4); 
@@ -102,7 +124,10 @@ class LoadGame {
     text("LvL8", width*4/8+225, 210);
     textAlign(LEFT);
 
-    fill(chol[8]*G.nr, 255*G.nr, chol[8]*G.nr);
+    fill(chol[8], 255, chol[8] );
+    if (G.nr < 8) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*1/8, 250, 150, height*1/4);     
@@ -113,7 +138,10 @@ class LoadGame {
     textAlign(LEFT);
 
 
-    fill(chol[9]*G.nr, 255*G.nr, chol[9]*G.nr);
+    fill(chol[9], 255, chol[9]);
+    if (G.nr < 9) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*2/8+50, 250, 150, height*1/4);     
@@ -123,7 +151,10 @@ class LoadGame {
     text("LvL10", width*2/8+125, 310);
     textAlign(LEFT);
 
-    fill(chol[10]*G.nr, 255*G.nr, chol[10]*G.nr);
+    fill(chol[10], 255, chol[10] );
+    if (G.nr < 10) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*3/8+100, 250, 150, height*1/4);  
@@ -133,7 +164,10 @@ class LoadGame {
     text("LvL11", width*3/8+175, 310);
     textAlign(LEFT); 
 
-    fill(chol[11]*G.nr, 255*G.nr, chol[11]*G.nr);
+    fill(chol[11], 255, chol[11] );
+    if (G.nr < 11) {  
+      fill(0);
+    }
     stroke(0);
     strokeWeight(2);
     rect(width*4/8+150, 250, 150, height*1/4);
