@@ -3,16 +3,9 @@ class ProgessBar {
   PFont f;
   int proR;
   int proB;
-  int proRP1W1;
-  int proRP1W2;
-  int proRP1W3;
-  int proRP1W4;
 
 
   int proRP2U1;
-  int proP2U2;
-  int proP2U3;
-  int proP2U4;
   int proRP2U2;
   int proRP2U3;
   int proRP2U4;
