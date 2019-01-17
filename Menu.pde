@@ -77,6 +77,10 @@ class Menu {
     stroke(0);
     strokeWeight(2);
     rect(width-80, 0, 80, 80);
+    fill(0);
+    textFont(f, 20);
+    textAlign(CENTER);
+    text("Keys", width-40, 45);
 
     if (mouseX>=720 && mouseX<=800 && mouseY>=0 && mouseY<=80) {
       km = 0;
@@ -85,6 +89,7 @@ class Menu {
       km = 255;
       screen[3] = false;
     }
+    textAlign(LEFT);
   }
 
   void eksit() {
@@ -92,6 +97,10 @@ class Menu {
     stroke(0);
     strokeWeight(2);
     rect(0, 0, 80, 80);
+    fill(0);
+    textFont(f, 20);
+    textAlign(CENTER);
+    text("Exit", 40, 45);
 
     if (mouseX>=0 && mouseX<=80 && mouseY>=0 && mouseY<=80 && t >= 10) {
 
@@ -100,7 +109,8 @@ class Menu {
     } else { 
       ek = 255;
       screen[4] = false;
-    }
+    } 
+    textAlign(LEFT);
   }
 
   void run() {

@@ -6,11 +6,12 @@ class LoadGame {
   int lea;
   boolean leave;
 
-  LoadGame() {
+  LoadGame() { 
+    f = createFont("areal", 16, true);
   }
 
   void bord() {
-    f = createFont("areal", 16, true);
+
     fill(0, 0, 0); 
     textFont(f, 26);
     textAlign(CENTER);
@@ -273,6 +274,11 @@ class LoadGame {
     stroke(0);
     strokeWeight(2);
     rect(0, 0, 80, 80);
+    fill(0);
+    textFont(f, 20);
+    textAlign(CENTER);
+    text("Back", 40, 45); 
+
 
     if (mouseX>=0 && mouseX<=80 && mouseY>=0 && mouseY<=80 ) {
       G.M.t=0;
@@ -284,7 +290,8 @@ class LoadGame {
     } else {
       lea = 255;
       leave = false;
-    }
+    }  
+    textAlign(LEFT);
   }
 
   void run() { 

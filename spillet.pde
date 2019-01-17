@@ -40,6 +40,7 @@ class Game {
       loc = 1;
     }
     if (mousePressed && M.screen[3]) {
+      Km.t = 0;
       loc = 2;
     }
     if (mousePressed && M.screen[0]) { 
@@ -58,7 +59,7 @@ class Game {
   }
 
   void run() {
-
+    println(Km.t);
 
     skift();//det er en place holder
     switch (loc) {

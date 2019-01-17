@@ -66,7 +66,6 @@ class escMenu {
     fill(255, 255, 0);
     stroke(0);
     strokeWeight(2);
-    textAlign(CENTER);
     rect(width*3/8, 0, width*2/8, height);
 
     fill(255, 255, chol[0]);
