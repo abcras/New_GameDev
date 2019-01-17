@@ -8,13 +8,14 @@ void setup() {
   G = new Game();
   //wauw
   //MenuSound = new SoundFile(this, "Great Fairy's Fountain Theme.mp3");
+  //MenuSound.loop();
   //MenuSound2 = new SoundFile(this, "Kingdom Hearts 2 - Dearly Beloved II.mp3");
   //MenuSound2.loop();
 }
 
 void draw() {
   background(255);
-G.run();  
+  G.run();
 }
 
 boolean[] keys = new boolean[10];
