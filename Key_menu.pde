@@ -18,8 +18,8 @@ class Keymenu {
     text("W ↑", 445, 185);  
     text("S ↓", 445, 305); 
 
-    text("Space", 700, 125);  
-    text("Esc", 700, 300);
+    text("Space"+"\n"+"Accept", 700, 125);  
+    text("Esc"+"\n"+"Mini Menu", 700, 300);
 
     if (t >= 41 && t <= 49) { 
       textAlign(CENTER);
