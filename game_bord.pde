@@ -30,7 +30,7 @@ class GameBoard {
     rect(width*5/8, height*2/4, height*1/4, width*1/8);
     rect(width*6/8, height*3/4, height*1/4, width*1/8);
 
-    //upgeade box
+    //upgrade box
     fill(222, 0, 222);
     stroke(0);
     strokeWeight(2);
@@ -60,7 +60,7 @@ class GameBoard {
     textAlign(CENTER);
     textFont(f, 16);
     textLeading(20);
-    text("Time"+"\n"+"2", 780, 20);
+    text("Time"+"\n"+G.level.time, 780, 20);
     noFill();
     textAlign(LEFT);
   }

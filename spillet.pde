@@ -15,7 +15,7 @@ class Game {
   LogikWC Wc = new LogikWC();
   LogikWP Wp = new LogikWP();
   ProgessBar Pb = new ProgessBar();
-  Level level = new Level(Lg.levelCode);
+  Level level = new Level();
 
   Game() {
   }
@@ -84,13 +84,9 @@ class Game {
       Ec.run();
       break;
 
-
     case 3:
 
-
-    case 4:
-      level.run();
-
+      level.changelevel(0);
       T.run();
       Pb.run();
       Gb.run();
@@ -99,7 +95,7 @@ class Game {
       Ec.run();
       break;
 
-    case 5:
+    case 4:
 
       break;
     }
