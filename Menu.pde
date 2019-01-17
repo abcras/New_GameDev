@@ -63,7 +63,10 @@ class Menu {
     }
     if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       G.Lg.t=0;
+=======
+>>>>>>> parent of f4babf2... den rigtite efter timerne d17/1/19
 =======
 >>>>>>> parent of f4babf2... den rigtite efter timerne d17/1/19
       G.nr=12;

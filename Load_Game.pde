@@ -270,7 +270,10 @@ class LoadGame {
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of f4babf2... den rigtite efter timerne d17/1/19
 =======
 >>>>>>> parent of f4babf2... den rigtite efter timerne d17/1/19
   void leave() {
