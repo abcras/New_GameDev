@@ -18,6 +18,7 @@ class Keymenu {
     text("W ↑", 445, 185);  
     text("S ↓", 445, 305); 
 
+    textFont(f, 20);
     text("Space"+"\n"+"Accept", 700, 125);  
     text("Esc"+"\n"+"Mini Menu", 700, 300);
 

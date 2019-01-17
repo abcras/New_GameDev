@@ -70,7 +70,7 @@ class ProgessBar {
         proP1W2 = 40;
 
 
-        float mproP1W2 = map(proP1W2, 0, 100, 0, width-100);
+        float mproP1W2 = map(proP1W2, 0, 100, 0, 100);
 
 
         fill(23, 123, 222);
