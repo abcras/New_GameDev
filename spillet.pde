@@ -147,6 +147,5 @@ class Game {
 
       break;
     }
-    println(Lg.t);
   }
 }

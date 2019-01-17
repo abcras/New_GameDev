@@ -61,8 +61,7 @@ class Menu {
       cn = 255;
       screen[2] = false;
     }
-    if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) { 
-      G.Lg.t = 0;
+    if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
       G.nr=12;
       cl = 0;
       screen[1] = true;
@@ -84,7 +83,6 @@ class Menu {
     text("Keys", width-40, 45);
 
     if (mouseX>=720 && mouseX<=800 && mouseY>=0 && mouseY<=80) {
-
       km = 0;
       screen[3] = true;
     } else {
