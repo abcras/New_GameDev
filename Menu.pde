@@ -54,15 +54,22 @@ class Menu {
       cc = 255;
       screen[0] = false;
     }
-   if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) { 
-      G.Lg.t = 0;
+    if (mouseX>=300 && mouseX<=499 && mouseY>=280 && mouseY<=360) {
       cn = 0;
       screen[2] = true;
     } else {
       cn = 255;
       screen[2] = false;
     }
-    
+    if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
+      G.Lg.t=0;
+      G.nr=12;
+      cl = 0;
+      screen[1] = true;
+    } else {
+      cl = 255;
+      screen[1] = false;
+    }
   }
 
   void keymenu() {
