@@ -1,8 +1,8 @@
 class Game {
 
-
-
-  int nr;
+  int lvlcode;
+  boolean win = false;
+  int nr=0;
   int loc = 0;  
   Timer T = new Timer();
 
@@ -15,7 +15,7 @@ class Game {
   LogikWC Wc = new LogikWC();
   LogikWP Wp = new LogikWP();
   ProgessBar Pb = new ProgessBar();
-  Level level = new Level(Lg.levelCode);
+  Level level = new Level();
 
   Game() {
   }
@@ -49,6 +49,51 @@ class Game {
 
     if (mousePressed && Lg.LVL[0]) { 
       loc = 3;
+      lvlcode=0;
+    }
+    if (mousePressed && Lg.LVL[1]) { 
+      loc = 3;
+      lvlcode=1;
+    }
+    if (mousePressed && Lg.LVL[2]) { 
+      loc = 3;
+      lvlcode=2;
+    }
+    if (mousePressed && Lg.LVL[3]) { 
+      loc = 3;
+      lvlcode=3;
+    }
+    if (mousePressed && Lg.LVL[4]) { 
+      loc = 3;
+      lvlcode=4;
+    }
+    if (mousePressed && Lg.LVL[5]) { 
+      loc = 3;
+      lvlcode=5;
+    }
+    if (mousePressed && Lg.LVL[6]) { 
+      loc = 3;
+      lvlcode=6;
+    }
+    if (mousePressed && Lg.LVL[7]) { 
+      loc = 3;
+      lvlcode=7;
+    }
+    if (mousePressed && Lg.LVL[8]) { 
+      loc = 3;
+      lvlcode=8;
+    }
+    if (mousePressed && Lg.LVL[9]) { 
+      loc = 3;
+      lvlcode=9;
+    }
+    if (mousePressed && Lg.LVL[10]) { 
+      loc = 3;
+      lvlcode=10;
+    }
+    if (mousePressed && Lg.LVL[11]) { 
+      loc = 3;
+      lvlcode=11;
     }
     if (mousePressed && M.screen[4]) { 
       loc = -1;
@@ -59,12 +104,10 @@ class Game {
   }
 
   void run() {
-    println(Km.t);
-
+    println(Lg.chol);
+ println(nr);
     skift();//det er en place holder
     switch (loc) {
-
-
 
     case -1: 
       exit();
@@ -86,7 +129,11 @@ class Game {
       Ec.run();
       break;
 
+
+
+
     case 3:
+
 
       T.run();
       Pb.run();

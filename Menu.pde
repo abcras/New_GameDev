@@ -62,7 +62,7 @@ class Menu {
       screen[2] = false;
     }
     if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
-      G.nr=11;
+      G.nr=12;
       cl = 0;
       screen[1] = true;
     } else {
