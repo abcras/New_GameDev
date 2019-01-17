@@ -24,7 +24,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(0, height/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }
 
     if (P1Select.x == 0 && P1Select.y == -1) {
@@ -39,7 +39,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*2/8, height/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }    
 
     if (P1Select.x == -1 && P1Select.y == 0) {
@@ -54,7 +54,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*1/8, height*2/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }    
 
     if (P1Select.x == 1 && P1Select.y == 0) {
@@ -69,7 +69,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(0, height*3/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }    
 
     if (P1Select.x == 0 && P1Select.y == 1) {
@@ -84,7 +84,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*2/8, height*3/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }
 
 
@@ -95,7 +95,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*5/8, height/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }
 
     if (P2Select.x == 0 && P2Select.y == -1) {
@@ -110,7 +110,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*7/8, height/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }    
 
     if (P2Select.x == -1 && P2Select.y == 0) {
@@ -125,7 +125,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*6/8, height*2/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }    
 
     if (P2Select.x == 1 && P2Select.y == 0) {
@@ -140,7 +140,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*5/8, height*3/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }    
 
     if (P2Select.x == 0 && P2Select.y == 1) {
@@ -155,7 +155,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*7/8, height*3/4, height*1/4, width*1/8);
-      accepted = true;
+      accepted = false;
     }
   }
 
