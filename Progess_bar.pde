@@ -28,14 +28,9 @@ class ProgessBar {
     proR = 4000;
     proB = 4000;
 
-<<<<<<< HEAD
-    println(G.level.WinScore);
-    float mproR = constrain(map(proR, 0, G.level.WinScore.x, 0, width-100), 0, width-100);
-    float mproB = constrain(map(proB, 0, G.level.WinScore.x, 0, width-100), 0, width-100);
-=======
+
     float mproR = constrain(map(proR, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
     float mproB = constrain(map(proB, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
->>>>>>> Rasmus
 
 
     fill(0);
