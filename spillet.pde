@@ -105,7 +105,7 @@ class Game {
 
   void run() {
     println(Lg.chol);
- println(nr);
+    println(nr, Lg.t);
     skift();//det er en place holder
     switch (loc) {
 

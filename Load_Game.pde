@@ -289,7 +289,7 @@ class LoadGame {
       }
     }
   }
-  
+
   void leave() {
     fill(255, lea, 255);
     stroke(0);
@@ -316,7 +316,7 @@ class LoadGame {
   }
 
   void run() { 
-
+    t++;
     leave();
     bord();
     bordlogic();
