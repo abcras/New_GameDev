@@ -64,8 +64,6 @@ class Game {
     skift();//det er en place holder
     switch (loc) {
 
-
-
     case -1: 
       exit();
       break;
@@ -86,7 +84,12 @@ class Game {
       Ec.run();
       break;
 
+
     case 3:
+
+
+    case 4:
+      level.run();
 
       T.run();
       Pb.run();

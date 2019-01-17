@@ -58,8 +58,6 @@ class GameBoard {
     rect(width-40, 5, 40, 40);
     fill(222, 0, 222);
     textAlign(CENTER);
-    textFont(f, 26);
-    text("time", 780, 20);
     textFont(f, 16);
     textLeading(20);
     text("Time"+"\n"+"2", 780, 20);
