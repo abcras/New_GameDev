@@ -3,7 +3,7 @@ class LoadGame {
   PFont f; 
   boolean[] LVL = new boolean[12];
   int[] chol = new int[12];
-
+int levelCode;
   int lea;
   boolean leave;
   int t;
@@ -193,7 +193,7 @@ class LoadGame {
     if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       chol[1] = 0;
       //LVL2 = true;
-        levelCode = 2;
+      levelCode = 2;
     } else {
       chol[1] = 255;
       //LVL2 = false;
@@ -202,111 +202,112 @@ class LoadGame {
       chol[2] = 0;
       //LVL3 = true;
 
-        levelCode = 3;
+      levelCode = 3;
     } else {
       chol[2] = 255;
       //LVL3 = false;
-    if (G.nr >= 1) { 
-      if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
-        chol[1] = 0;
-        LVL[1] = true;
-      } else {
-        chol[1] = 255;
-        LVL[1] = false;
+      if (G.nr >= 1) { 
+        if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
+          chol[1] = 0;
+          LVL[1] = true;
+        } else {
+          chol[1] = 255;
+          LVL[1] = false;
+        }
+      } 
+      if (G.nr >= 2) { 
+        if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
+          chol[2] = 0;
+          LVL[2] = true;
+        } else {
+          chol[2] = 255;
+          LVL[2] = false;
+        }
+      } 
+      if (G.nr >= 3) { 
+        if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
+          chol[3] = 0;
+          LVL[3] = true;
+        } else {
+          chol[3] = 255;
+          LVL[3] = false;
+        }
+      }     
+      if (G.nr >= 4) { 
+        if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*3/8 && mouseY <= height*5/8) {
+          chol[4] = 0;
+          LVL[4] = true;
+        } else {
+          chol[4] = 255;
+          LVL[4] = false;
+        }
       }
-    } 
-    if (G.nr >= 2) { 
-      if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
-        chol[2] = 0;
-        LVL[2] = true;
-      } else {
-        chol[2] = 255;
-        LVL[2] = false;
+      if (G.nr >= 5) { 
+        if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*3/8 && mouseY <= height*5/8) {
+          chol[5] = 0;
+          LVL[5] = true;
+        } else {
+          chol[5] = 255;
+          LVL[5] = false;
+        }
+      } 
+      if (G.nr >= 6) { 
+        if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*3/8 && mouseY <= height*5/8) {
+          chol[6] = 0;
+          LVL[6] = true;
+        } else {
+          chol[6] = 255;
+          LVL[6] = false;
+        }
+      }  
+      if (G.nr >= 7) { 
+        if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >=height*3/8 && mouseY <= height*5/8) {
+          chol[7] = 0;
+          LVL[7] = true;
+        } else {
+          chol[7] = 255;
+          LVL[7] = false;
+        }
+      }     
+      if (G.nr >= 8) { 
+        if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*5/8 && mouseY <= height*7/8) {
+          chol[8] = 0;
+          LVL[8] = true;
+        } else {
+          chol[8] = 255;
+          LVL[8] = false;
+        }
       }
-    } 
-    if (G.nr >= 3) { 
-      if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
-        chol[3] = 0;
-        LVL[3] = true;
-      } else {
-        chol[3] = 255;
-        LVL[3] = false;
-      }
-    }     
-    if (G.nr >= 4) { 
-      if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*3/8 && mouseY <= height*5/8) {
-        chol[4] = 0;
-        LVL[4] = true;
-      } else {
-        chol[4] = 255;
-        LVL[4] = false;
-      }
-    }
-    if (G.nr >= 5) { 
-      if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*3/8 && mouseY <= height*5/8) {
-        chol[5] = 0;
-        LVL[5] = true;
-      } else {
-        chol[5] = 255;
-        LVL[5] = false;
-      }
-    } 
-    if (G.nr >= 6) { 
-      if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*3/8 && mouseY <= height*5/8) {
-        chol[6] = 0;
-        LVL[6] = true;
-      } else {
-        chol[6] = 255;
-        LVL[6] = false;
-      }
-    }  
-    if (G.nr >= 7) { 
-      if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >=height*3/8 && mouseY <= height*5/8) {
-        chol[7] = 0;
-        LVL[7] = true;
-      } else {
-        chol[7] = 255;
-        LVL[7] = false;
-      }
-    }     
-    if (G.nr >= 8) { 
-      if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*5/8 && mouseY <= height*7/8) {
-        chol[8] = 0;
-        LVL[8] = true;
-      } else {
-        chol[8] = 255;
-        LVL[8] = false;
-      }
-    }
-    if (G.nr >= 9) { 
-      if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*5/8 && mouseY <= height*7/8) {
-        chol[9] = 0;
-        LVL[9] = true;
-      } else {
-        chol[9] = 255;
-        LVL[9] = false;
-      }
-    }  
-    if (G.nr >= 10) { 
-      if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*5/8 && mouseY <= height*7/8) {
-        chol[10] = 0;
-        LVL[10] = true;
-      } else {
-        chol[10] = 255;
-        LVL[10] = false;
-      }
-    }  
-    if (G.nr >= 11) { 
-      if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >= height*5/8 && mouseY <= height*7/8 && t >= 30) {
-        chol[11] = 0;
-        LVL[11] = true;
-      } else {
-        chol[11] = 255;
-        LVL[11] = false;
+      if (G.nr >= 9) { 
+        if (mouseX >= width*5/16 && mouseX <= width*8/16 && mouseY >= height*5/8 && mouseY <= height*7/8) {
+          chol[9] = 0;
+          LVL[9] = true;
+        } else {
+          chol[9] = 255;
+          LVL[9] = false;
+        }
+      }  
+      if (G.nr >= 10) { 
+        if (mouseX >= width*8/16 && mouseX <= width*11/16 && mouseY >= height*5/8 && mouseY <= height*7/8) {
+          chol[10] = 0;
+          LVL[10] = true;
+        } else {
+          chol[10] = 255;
+          LVL[10] = false;
+        }
+      }  
+      if (G.nr >= 11) { 
+        if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >= height*5/8 && mouseY <= height*7/8 && t >= 30) {
+          chol[11] = 0;
+          LVL[11] = true;
+        } else {
+          chol[11] = 255;
+          LVL[11] = false;
+        }
       }
     }
   }
-  
+
   void leave() {
     fill(255, lea, 255);
     stroke(0);
