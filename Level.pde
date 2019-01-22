@@ -22,7 +22,7 @@ class Level {
       WorkPower[1] = new PVector(100, 100);      
       WorkPower[2] = new PVector(100, 100);      
       WorkPower[3] = new PVector(100, 100);
-      WinScore = new PVector(30000, 30000);
+      WinScore = new PVector(3000, 3000);
       time = 30;
       break;
 

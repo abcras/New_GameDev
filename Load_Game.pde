@@ -3,7 +3,7 @@ class LoadGame {
   PFont f; 
   boolean[] LVL = new boolean[12];
   int[] chol = new int[12];
-int levelCode;
+  int levelCode;
   int lea;
   boolean leave;
   int t;

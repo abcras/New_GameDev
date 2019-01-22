@@ -1,5 +1,7 @@
 class LogikWC {
 
+  int t;
+
   PFont f;
   boolean accept = false;
   boolean accepted = false;
@@ -294,7 +296,7 @@ class LogikWC {
 
 
     if (keys[0] && acceptP1 == -1 && acceptP2 == -1 && G.T.St == 0) {
-     
+
       accept = false;
       P1Select = new PVector(0, 0);
       P2Select = new PVector(0, 0);
@@ -303,6 +305,7 @@ class LogikWC {
       acceptP1 = 0; 
       action1 = true;
       action2 = true;
+      t++;
     }
 
     if (keys[0] && acceptP1 == 1 && acceptP2 == 1 && G.T.St == 0) {
@@ -334,7 +337,7 @@ class LogikWC {
 
 
   void run() {
-
+    
 
     highLight();
 
@@ -345,6 +348,5 @@ class LogikWC {
       choseP1();
       choseP2();
     }
-  
   }
 }

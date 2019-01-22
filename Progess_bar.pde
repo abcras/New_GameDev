@@ -25,9 +25,7 @@ class ProgessBar {
     strokeWeight(0);
     textAlign(LEFT);
 
-    proR = 0;
-    proB = 0;
-
+     
 
     float mproR = constrain(map(proR, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
     float mproB = constrain(map(proB, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
@@ -56,7 +54,7 @@ class ProgessBar {
 
   void ProgressBarworker() {
     proP1W1 = G.level.WorkPower[0]/*+upgradeW1*/;
-    PVector curW1 = proP1W1/* -taskW1 */;
+    PVector curW1 = G.Wp.taskW1;
 
     proP1W2 = G.level.WorkPower[1]/*+upgradeW2*/;
     PVector curW2 = proP1W2/* -taskW2 */;
