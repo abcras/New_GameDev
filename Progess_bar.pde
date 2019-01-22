@@ -25,8 +25,6 @@ class ProgessBar {
     strokeWeight(0);
     textAlign(LEFT);
 
-    proR = 4000;
-    proB = 4000;
 
 
     float mproR = constrain(map(proR, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
