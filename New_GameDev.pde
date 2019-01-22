@@ -1,3 +1,4 @@
+//vi skal i upgrade området gøre at man kan ikke gøre noget
 
 Game G;
 

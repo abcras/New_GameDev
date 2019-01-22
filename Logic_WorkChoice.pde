@@ -4,18 +4,22 @@ class LogikWC {
   boolean accept = false;
   boolean accepted = false;
   boolean accepted2 = false;
+  boolean action1 = false; 
+  boolean action2 = false;
   PVector P1Select = new PVector(0, 0);
   PVector P2Select = new PVector(0, 0);
   int acceptP1 = 0;
   int acceptP2 = 0;
 
+  boolean UpgadeW1 = false;
+  boolean UpgadeW2 = false;
+  boolean UpgadeW3 = false;
+  boolean UpgadeW4 = false;
+
   LogikWC() {
   }
 
-  void taskChoice() {
-  }
-  void upgradeChoice() {
-  }
+
 
   void highLight() {
 
@@ -96,6 +100,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*5/8, height/4, height*1/4, width*1/8);
       accepted = false;
+      UpgadeW1 = false;
+      UpgadeW2 = false;
+      UpgadeW3 = false;
+      UpgadeW4 = false;
     }
 
     if (P2Select.x == 0 && P2Select.y == -1) {
@@ -103,7 +111,8 @@ class LogikWC {
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
       rect(width*6/8, height/4, height*1/4, width*1/8);
-      accepted2 = true;
+      accepted2 = true;      
+      UpgadeW1 = true;
     }    
     if (P2Select.x == 1 && P2Select.y == -1) {
       fill(200);
@@ -111,6 +120,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*7/8, height/4, height*1/4, width*1/8);
       accepted = false;
+      UpgadeW1 = false;
+      UpgadeW2 = false;
+      UpgadeW3 = false;
+      UpgadeW4 = false;
     }    
 
     if (P2Select.x == -1 && P2Select.y == 0) {
@@ -119,6 +132,7 @@ class LogikWC {
       strokeWeight(2);
       rect(width*5/8, height*2/4, height*1/4, width*1/8);
       accepted2 = true;
+      UpgadeW2 = true;
     }    
     if (P2Select.x == 0 && P2Select.y == 0) {
       fill(200);
@@ -126,6 +140,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*6/8, height*2/4, height*1/4, width*1/8);
       accepted = false;
+      UpgadeW1 = false;
+      UpgadeW2 = false;
+      UpgadeW3 = false;
+      UpgadeW4 = false;
     }    
 
     if (P2Select.x == 1 && P2Select.y == 0) {
@@ -134,6 +152,7 @@ class LogikWC {
       strokeWeight(2);
       rect(width*7/8, height*2/4, height*1/4, width*1/8);
       accepted2 = true;
+      UpgadeW3 = true;
     }    
     if (P2Select.x == -1 && P2Select.y == 1) {
       fill(200);
@@ -141,6 +160,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*5/8, height*3/4, height*1/4, width*1/8);
       accepted = false;
+      UpgadeW1 = false;
+      UpgadeW2 = false;
+      UpgadeW3 = false;
+      UpgadeW4 = false;
     }    
 
     if (P2Select.x == 0 && P2Select.y == 1) {
@@ -149,6 +172,7 @@ class LogikWC {
       strokeWeight(2);
       rect(width*6/8, height*3/4, height*1/4, width*1/8);
       accepted2 = true;
+      UpgadeW4 = true;
     }    
     if (P2Select.x == 1 && P2Select.y == 1) {
       fill(200);
@@ -156,6 +180,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*7/8, height*3/4, height*1/4, width*1/8);
       accepted = false;
+      UpgadeW1 = false;
+      UpgadeW2 = false;
+      UpgadeW3 = false;
+      UpgadeW4 = false;
     }
   }
 
@@ -186,7 +214,13 @@ class LogikWC {
       stroke(200, 0, 0);
       strokeWeight(2);
       rect(width*3/4+5, 150+37+1/2, width*1/4-5, 37+1/2);
-    }
+    } 
+    fill(0, 0, 200); 
+    textFont(f, 36);
+    textAlign(CENTER); 
+    text("YES", width*1/8, height/2);    
+    text("NO", width*7/8, height/2);
+    textAlign(LEFT);
   }
 
   void choseP1() {
@@ -254,19 +288,24 @@ class LogikWC {
     fill(255, 0, 0);
     textFont(f, 36);
     textAlign(CENTER);
-    text("ACCEPT THIS ACTION?", width/2, height/2);
+    text("ACCEPT THIS ACTION?", width/2, height/2); 
+
     textAlign(LEFT);
 
 
     if (keys[0] && acceptP1 == -1 && acceptP2 == -1 && G.T.St == 0) {
+     
       accept = false;
       P1Select = new PVector(0, 0);
       P2Select = new PVector(0, 0);
       G.T.St = 1;
       acceptP2 = 0;
-      acceptP1 = 0;
+      acceptP1 = 0; 
+      action1 = true;
+      action2 = true;
     }
-        if (keys[0] && acceptP1 == 1 && acceptP2 == 1 && G.T.St == 0) {
+
+    if (keys[0] && acceptP1 == 1 && acceptP2 == 1 && G.T.St == 0) {
       accept = false;
       P1Select = new PVector(0, 0);
       P2Select = new PVector(0, 0);
@@ -295,8 +334,8 @@ class LogikWC {
 
 
   void run() {
-    taskChoice() ;
-    upgradeChoice();
+
+
     highLight();
 
     if (accept) {
@@ -306,5 +345,6 @@ class LogikWC {
       choseP1();
       choseP2();
     }
+  
   }
 }

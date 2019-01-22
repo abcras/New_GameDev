@@ -108,8 +108,8 @@ class Game {
 
   void run() {
     //println(Lg.chol);
-   // println(nr);
-   
+    // println(nr);
+
     skift();//det er en place holder
     switch (loc) {
 
@@ -142,8 +142,9 @@ class Game {
       T.run();
       Pb.run();
       Gb.run();
-      Wp.run();
       Wc.run(); 
+      Wp.run();
+
       Ec.run();
       break;
 
