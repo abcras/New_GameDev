@@ -61,7 +61,7 @@ class escMenu {
   }
 
   void display() {
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
 
     fill(255, 255, 0);
     stroke(0);

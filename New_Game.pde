@@ -7,7 +7,7 @@ class NewGame {
   }
 
   void bord() {
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
     fill(0, 0, 0);
     textFont(f, 26);
     textAlign(CENTER);

@@ -13,7 +13,7 @@ class Menu {
 
 
   Menu() {
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
   }    
 
   void lvlChoiceBox() {

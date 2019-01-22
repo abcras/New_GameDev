@@ -6,7 +6,7 @@ class Keymenu {
   PFont f;
 
   Keymenu() {
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
   }
   void bogstaver() { 
     textAlign(CENTER);

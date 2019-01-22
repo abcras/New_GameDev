@@ -250,7 +250,7 @@ class LogikWC {
     stroke(200, 0, 0);
     strokeWeight(2);
     rect(0, 150, width, 75);
-    f = createFont("areal", 20, true);
+    f = createFont("arIal", 20, true);
     fill(255, 0, 0);
     textFont(f, 36);
     textAlign(CENTER);

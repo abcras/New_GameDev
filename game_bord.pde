@@ -5,7 +5,7 @@ class GameBoard {
 
 
   void PlayerField() {
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
 
 
     fill(150);
@@ -51,7 +51,7 @@ class GameBoard {
     textAlign(LEFT);
   }
   void time() {
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
     fill(150, 155, 155);
     stroke(0);
     strokeWeight(2);

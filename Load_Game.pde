@@ -9,7 +9,7 @@ int levelCode;
   int t;
 
   LoadGame() { 
-    f = createFont("areal", 16, true);
+    f = createFont("arial", 16, true);
   }
 
   void bord() {
