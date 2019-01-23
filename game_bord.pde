@@ -60,7 +60,18 @@ class GameBoard {
     textAlign(CENTER);
     textFont(f, 16);
     textLeading(20);
-    text("Time"+"\n"+G.level.time, 780, 20);
+    text("Time"+"\n"+30, 780, 20);
+    noFill();
+
+    fill(150, 155, 155);
+    stroke(0);
+    strokeWeight(2);
+    rect(0, 5, 40, 40);
+    fill(222, 0, 222);
+    textAlign(CENTER);
+    textFont(f, 16);
+    textLeading(20);
+    text("Time"+"\n"+G.level.time, 20, 20);
     noFill();
     textAlign(LEFT);
   }
