@@ -5,10 +5,15 @@ class Timer {
   int es = 0;
   int mr = 0;
   int t;
+  int endTimer;
+
+
   Timer() {
   }
 
- 
+
+
   void run() {
+
   }
 }

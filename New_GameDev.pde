@@ -19,7 +19,7 @@ void draw() {
   G.run();
 }
 
-boolean[] keys = new boolean[10];
+boolean[] keys = new boolean[11];
 
 void keyPressed() {
   switch (key) {
@@ -55,6 +55,9 @@ void keyPressed() {
   case ESC:
     keys[9] = true;
     key = 0;
+    break;
+  case ENTER:
+    keys[10] = true;
     break;
   }
 }
@@ -103,6 +106,9 @@ void keyReleased() {
     keys[9] = false;
     key = 0;
     G.T.es = 0;
+    break;
+  case ENTER:
+    keys[10] = true;
     break;
   }
 }

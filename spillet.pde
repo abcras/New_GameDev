@@ -12,7 +12,7 @@ class Game {
   Keymenu Km = new Keymenu();
   GameBoard Gb = new GameBoard();
   escMenu Ec = new escMenu();
-
+  EndScreen ES = new EndScreen();
   LogikWC Wc = new LogikWC();
   LogikWP Wp = new LogikWP();
   Level level = new Level();
@@ -28,14 +28,12 @@ class Game {
     if (mousePressed && Lg.leave) { 
       loc = 0;
     }
-
-
     if (mousePressed && Ec.Opt[2]) { 
 
       loc = 0;
     }
     if (mousePressed && M.screen[2]) {   
-      nr=0;
+      nr = 0;
       loc = 1;
     }
     if (mousePressed && M.screen[1]) { 
@@ -46,7 +44,7 @@ class Game {
       loc = 2;
     }
     if (mousePressed && M.screen[0]) { 
-      loc = 3;
+      loc = 5;
     }
 
     if (mousePressed && Lg.LVL[0]) { 
@@ -149,7 +147,7 @@ class Game {
       break;
 
     case 5:
-
+    ES.run();
       break;
     }
   }
