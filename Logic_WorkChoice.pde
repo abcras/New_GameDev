@@ -36,6 +36,10 @@ class LogikWC {
       strokeWeight(2);
       rect(0, height/4, height*1/4, width*1/8);
       accepted = false;
+      G.Wc.TaskW1 = 0;
+      G.Wc.TaskW2 = 0;
+      G.Wc.TaskW3 = 0;
+      G.Wc.TaskW4 = 0;
     }
 
     if (P1Select.x == 0 && P1Select.y == -1) {
@@ -53,6 +57,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*2/8, height/4, height*1/4, width*1/8);
       accepted = false;
+      G.Wc.TaskW1 = 0;
+      G.Wc.TaskW2 = 0;
+      G.Wc.TaskW3 = 0;
+      G.Wc.TaskW4 = 0;
     }    
 
     if (P1Select.x == -1 && P1Select.y == 0) {
@@ -91,6 +99,10 @@ class LogikWC {
       strokeWeight(2);
       rect(0, height*3/4, height*1/4, width*1/8);
       accepted = false;
+      G.Wc.TaskW1 = 0;
+      G.Wc.TaskW2 = 0;
+      G.Wc.TaskW3 = 0;
+      G.Wc.TaskW4 = 0;
     }    
 
     if (P1Select.x == 0 && P1Select.y == 1) {
@@ -108,6 +120,10 @@ class LogikWC {
       strokeWeight(2);
       rect(width*2/8, height*3/4, height*1/4, width*1/8);
       accepted = false;
+      G.Wc.TaskW1 = 0;
+      G.Wc.TaskW2 = 0;
+      G.Wc.TaskW3 = 0;
+      G.Wc.TaskW4 = 0;
     }
 
 
@@ -325,12 +341,15 @@ class LogikWC {
       G.T.St = 1;
       acceptP2 = 0;
       acceptP1 = 0; 
-      action1 = true;
-      action2 = true;
+
       G.Wp.work = !G.Wp.work;
       t++;
+      G.Wp.t = 4;
+      action1 = true;
+      action2 = true;
 
       if (t>=G.level.tasknr) {
+        println("hej");
         G.Pb.t=1;
         t = 0;
         G.level.time++;
@@ -339,9 +358,6 @@ class LogikWC {
         G.Wp.UpgadeBlocker[2]--; 
         G.Wp.UpgadeBlocker[3]--;
         G.Wp.progessing = true;
-
-
-        
       }
     }
 
@@ -377,6 +393,7 @@ class LogikWC {
 
     //println(UpgadeW1, UpgadeW2, UpgadeW3, UpgadeW4);
     //println(TaskW1, TaskW2, TaskW3, TaskW4);
+    println(t);
     highLight();
 
     if (accept) {

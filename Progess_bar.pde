@@ -3,8 +3,8 @@ class ProgessBar {
   PFont f;
   int proR;
   int proB;
-  int t;
-
+  int t =6;
+  boolean GO = false;
   PVector proRP2U1;
   PVector proRP2U2;
   PVector proRP2U3;
@@ -57,17 +57,50 @@ class ProgessBar {
 
   void ProgressBarworker() {
 
-    proP1W1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);  
-    curW1 = PVector.sub(proP1W1, G.Wp.taskW1);
+    if (t>5 && t< 25 && GO == false) {
+      t++;
 
-    proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);
-    curW2 = PVector.sub(proP1W2, G.Wp.taskW2);
+      curW1.set(G.level.WorkPower[0]);
+      curW2.set(G.level.WorkPower[1]);
+      curW3.set(G.level.WorkPower[2]);
+      curW4.set(G.level.WorkPower[3]);
+      println("hej");
+      if (t>=24) {
+        GO = true;
+        t=0;
+      }
+    } 
+    if (GO) {
 
-    proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);
-    curW3 = PVector.sub(proP1W3, G.Wp.taskW3);
+      //println(curW1.x-G.Wp.task[G.Wp.tasknr].x, G.Wp.taskW1.x);
+      if (G.Wp.UpgadeBlocker[0] <= 0) {
+        proP1W1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);
+      }
 
-    proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);
-    curW4 = PVector.sub(proP1W4, G.Wp.taskW4);
+    if (G.Wp.UpgadeBlocker[1] <= 0) {   proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);}
+
+     if (G.Wp.UpgadeBlocker[2] <= 0) {  proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);}
+
+
+      if (G.Wp.UpgadeBlocker[3] <= 0) { proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);}
+
+
+
+      println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
+      if (int(curW1.x-G.Wp.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.Wp.task[G.Wp.tasknr].y) > 4) {
+        curW1 = PVector.sub(proP1W1, G.Wp.taskW1);
+      }
+      if (int(curW2.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.Wp.task[G.Wp.tasknr].y) > 0) {    
+        curW2 = PVector.sub(proP1W2, G.Wp.taskW2);
+      } 
+      if (int(curW3.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW3.y-G.Wp.task[G.Wp.tasknr].y) > 0) { 
+        curW3 = PVector.sub(proP1W3, G.Wp.taskW3);
+      } 
+      if (int(curW4.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW4.y-G.Wp.task[G.Wp.tasknr].y) > 0) {
+        curW4 = PVector.sub(proP1W4, G.Wp.taskW4);
+      }
+    }
+
 
     if (t >= 1) {
       t++; 
@@ -79,8 +112,7 @@ class ProgessBar {
         curW1.set(proP1W1);
         curW2.set(proP1W2);
         curW3.set(proP1W3);
-        curW4.set(proP1W4); 
-        println("hej", curW1, proP1W1);
+        curW4.set(proP1W4);
       }
     }
 
@@ -192,8 +224,8 @@ class ProgessBar {
 
 
       if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {
-        float mproRP2W1 = constrain(map(proP1W1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W1 = constrain(map(proP1W1.y, 0, proP1W1.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W1 = constrain(map(curW1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W1 = constrain(map(curW1.y, 0, proP1W1.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -215,8 +247,8 @@ class ProgessBar {
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == 1) {   
-        float mproRP2W2 = constrain(map(proP1W2.x, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W2 = constrain(map(proP1W2.y, 0, proP1W2.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W2 = constrain(map(curW2.x, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W2 = constrain(map(curW2.y, 0, proP1W2.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -287,7 +319,7 @@ class ProgessBar {
   }
 
   void run() {
-    //println(curW1,proP1W1);
+    println(curW1, curW2, curW3, curW4);
     ProgressBarworker();
     ProgressBarscore();
   }
