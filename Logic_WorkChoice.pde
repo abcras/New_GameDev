@@ -45,7 +45,7 @@ class LogikWC {
       rect(width*1/8, height/4, height*1/4, width*1/8);
       accepted = true;
       TaskW4 = 1;
-      println(4);
+      //println(4);
     }    
     if (P1Select.x == 1 && P1Select.y == -1) {
       fill(200);
@@ -62,7 +62,7 @@ class LogikWC {
       rect(0, height*2/4, height*1/4, width*1/8);
       accepted = true;
       TaskW1 = 1;
-      println(1);
+      //println(1);
     }    
     if (P1Select.x == 0 && P1Select.y == 0) {
       fill(200);
@@ -83,7 +83,7 @@ class LogikWC {
       rect(width*1/4, height*2/4, height*1/4, width*1/8);
       accepted = true;
       TaskW3 = 1;
-      println(3);
+      //println(3);
     }    
     if (P1Select.x == -1 && P1Select.y == 1) {
       fill(200);
@@ -100,7 +100,7 @@ class LogikWC {
       rect(width*1/8, height*3/4, height*1/4, width*1/8);
       accepted = true;
       TaskW2 = 1;
-      println(2);
+      //println(2);
     }    
     if (P1Select.x == 1 && P1Select.y == 1) {
       fill(200);
@@ -132,7 +132,7 @@ class LogikWC {
       rect(width*6/8, height/4, height*1/4, width*1/8);
       accepted2 = true;      
       UpgadeW4 = true;
-      println(4);
+      //println(4);
     }    
     if (P2Select.x == 1 && P2Select.y == -1) {
       fill(200);
@@ -153,7 +153,7 @@ class LogikWC {
       rect(width*5/8, height*2/4, height*1/4, width*1/8);
       accepted2 = true;
       UpgadeW1 = true;
-      println(1);
+      //println(1);
     }    
     if (P2Select.x == 0 && P2Select.y == 0) {
       fill(200);
@@ -174,7 +174,7 @@ class LogikWC {
       rect(width*7/8, height*2/4, height*1/4, width*1/8);
       accepted2 = true;
       UpgadeW3 = true;
-      println(3);
+      //println(3);
     }    
     if (P2Select.x == -1 && P2Select.y == 1) {
       fill(200);
@@ -195,7 +195,7 @@ class LogikWC {
       rect(width*6/8, height*3/4, height*1/4, width*1/8);
       accepted2 = true;
       UpgadeW2 = true;
-      println(2);
+      //println(2);
     }    
     if (P2Select.x == 1 && P2Select.y == 1) {
       fill(200);
@@ -331,12 +331,17 @@ class LogikWC {
       t++;
 
       if (t>=G.level.tasknr) {
+        G.Pb.t=1;
         t = 0;
         G.level.time++;
-        G.Wp.UpgadeBloker[0]--; 
-        G.Wp.UpgadeBloker[1]--; 
-        G.Wp.UpgadeBloker[2]--; 
-        G.Wp.UpgadeBloker[3]--;
+        G.Wp.UpgadeBlocker[0]--; 
+        G.Wp.UpgadeBlocker[1]--; 
+        G.Wp.UpgadeBlocker[2]--; 
+        G.Wp.UpgadeBlocker[3]--;
+        G.Wp.progessing = true;
+
+
+        
       }
     }
 

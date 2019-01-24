@@ -3,7 +3,7 @@ class ProgessBar {
   PFont f;
   int proR;
   int proB;
-
+  int t;
 
   PVector proRP2U1;
   PVector proRP2U2;
@@ -57,17 +57,32 @@ class ProgessBar {
 
   void ProgressBarworker() {
 
-
-    proP1W1 =  G.level.WorkPower[0].add(G.Wp.upgradeW1);  
+    proP1W1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);  
+    curW1 = PVector.sub(proP1W1, G.Wp.taskW1);
 
     proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);
-
+    curW2 = PVector.sub(proP1W2, G.Wp.taskW2);
 
     proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);
-
+    curW3 = PVector.sub(proP1W3, G.Wp.taskW3);
 
     proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);
+    curW4 = PVector.sub(proP1W4, G.Wp.taskW4);
 
+    if (t >= 1) {
+      t++; 
+      if (t <= 5) {
+        G.Wp.taskW1.set(0, 0);
+        G.Wp.taskW2.set(0, 0);
+        G.Wp.taskW3.set(0, 0);
+        G.Wp.taskW4.set(0, 0);
+        curW1.set(proP1W1);
+        curW2.set(proP1W2);
+        curW3.set(proP1W3);
+        curW4.set(proP1W4); 
+        println("hej", curW1, proP1W1);
+      }
+    }
 
     if (G.Wc.accept==false) {
       if (G.Wc.P1Select.x == -1 && G.Wc.P1Select.y == 0) { 
@@ -272,7 +287,7 @@ class ProgessBar {
   }
 
   void run() {
-    //println(proP1W1);
+    //println(curW1,proP1W1);
     ProgressBarworker();
     ProgressBarscore();
   }
