@@ -15,7 +15,6 @@ class EndScreen {
 
 
   void addScore() {
-    
     //this function adds the current score whenether it is run. This should be run whenether the timer adds score to the total.
     scoreProgressRed.add(new Score(G.Pb.progressRed));
     scoreProgressBlue.add(new Score(G.Pb.progressBlue));
@@ -45,8 +44,8 @@ class EndScreen {
     }
     if (scoreProgressRed.size() < 50) {
       //le test.
-      scoreProgressRed.add(new Score(10000*random(5)));
-      scoreProgressBlue.add(new Score(1000*random(10)));
+      scoreProgressRed.add(new Score(1000*random(6)));
+      scoreProgressBlue.add(new Score(100*random(20)));
     }
     //winGame is supposed to be set some other place but it is here for now.
     winGame = true;
@@ -55,7 +54,7 @@ class EndScreen {
     //the timer is stoppede for now. uncomment to initiate again.
 
     /*
-    //this don't work right now so no telling about either
+    //this don't work right now so no telling about it either
     fill(100);
      textAlign(CENTER);
      fill(0);
