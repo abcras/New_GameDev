@@ -2,7 +2,8 @@ class Level {
   PVector[] UpgradePower = new PVector[5];
   PVector[] WorkPower= new PVector[4];
   PVector WinScore;
-  int time;
+  int time = 1;
+  int tasknr;
 
 
 
@@ -21,8 +22,9 @@ class Level {
       WorkPower[1] = new PVector(100, 100);      
       WorkPower[2] = new PVector(100, 100);      
       WorkPower[3] = new PVector(100, 100);
-      WinScore = new PVector(30000, 30000);
-      time = 30;
+      WinScore = new PVector(3000, 3000);
+      tasknr = 15;
+
       break;
 
     case 1:

@@ -4,10 +4,17 @@ class ProgessBar {
   
   
   PFont f;
+<<<<<<< HEAD
   int progressRed;
   int progressBlue;
 
 
+=======
+  int proR;
+  int proB;
+  int t =6;
+  boolean GO = false;
+>>>>>>> workprogessogprogessbar
   PVector proRP2U1;
   PVector proRP2U2;
   PVector proRP2U3;
@@ -16,7 +23,10 @@ class ProgessBar {
   PVector proP1W2;
   PVector proP1W3;
   PVector proP1W4;
-
+  PVector curW1 = new PVector(0, 0);
+  PVector curW2 = new PVector(0, 0);
+  PVector curW3 = new PVector(0, 0);
+  PVector curW4 = new PVector(0, 0);
 
   ProgessBar() {
   }
@@ -30,8 +40,11 @@ class ProgessBar {
     strokeWeight(0);
     textAlign(LEFT);
 
+<<<<<<< HEAD
     progressRed = 0;
     progressBlue = 0;
+=======
+>>>>>>> workprogessogprogessbar
 
 
     float mproR = constrain(map(progressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
@@ -60,21 +73,74 @@ class ProgessBar {
 
 
   void ProgressBarworker() {
+<<<<<<< HEAD
     
     //this handles all the individual progressbars
     //it stores their data in the max value and the curent value for each worker
     
     proP1W1 = G.level.WorkPower[0]/*+upgradeW1*/;
     PVector curW1 = proP1W1/* -taskW1 */;
+=======
+>>>>>>> workprogessogprogessbar
 
-    proP1W2 = G.level.WorkPower[1]/*+upgradeW2*/;
-    PVector curW2 = proP1W2/* -taskW2 */;
+    if (t>5 && t< 25 && GO == false) {
+      t++;
 
-    proP1W3 = G.level.WorkPower[2]/*+upgradeW3*/;
-    PVector curW3 = proP1W3/* -taskW3 */;
+      curW1.set(G.level.WorkPower[0]);
+      curW2.set(G.level.WorkPower[1]);
+      curW3.set(G.level.WorkPower[2]);
+      curW4.set(G.level.WorkPower[3]);
+      println("hej");
+      if (t>=24) {
+        GO = true;
+        t=0;
+      }
+    } 
+    if (GO) {
 
-    proP1W4 = G.level.WorkPower[3]/*+upgradeW4*/;
-    PVector curW4 = proP1W4/* -taskW4 */;
+      //println(curW1.x-G.Wp.task[G.Wp.tasknr].x, G.Wp.taskW1.x);
+      if (G.Wp.UpgadeBlocker[0] <= 0) {
+        proP1W1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);
+      }
+
+    if (G.Wp.UpgadeBlocker[1] <= 0) {   proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);}
+
+     if (G.Wp.UpgadeBlocker[2] <= 0) {  proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);}
+
+
+      if (G.Wp.UpgadeBlocker[3] <= 0) { proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);}
+
+
+
+      println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
+      if (int(curW1.x-G.Wp.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.Wp.task[G.Wp.tasknr].y) > 4) {
+        curW1 = PVector.sub(proP1W1, G.Wp.taskW1);
+      }
+      if (int(curW2.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.Wp.task[G.Wp.tasknr].y) > 0) {    
+        curW2 = PVector.sub(proP1W2, G.Wp.taskW2);
+      } 
+      if (int(curW3.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW3.y-G.Wp.task[G.Wp.tasknr].y) > 0) { 
+        curW3 = PVector.sub(proP1W3, G.Wp.taskW3);
+      } 
+      if (int(curW4.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW4.y-G.Wp.task[G.Wp.tasknr].y) > 0) {
+        curW4 = PVector.sub(proP1W4, G.Wp.taskW4);
+      }
+    }
+
+
+    if (t >= 1) {
+      t++; 
+      if (t <= 5) {
+        G.Wp.taskW1.set(0, 0);
+        G.Wp.taskW2.set(0, 0);
+        G.Wp.taskW3.set(0, 0);
+        G.Wp.taskW4.set(0, 0);
+        curW1.set(proP1W1);
+        curW2.set(proP1W2);
+        curW3.set(proP1W3);
+        curW4.set(proP1W4);
+      }
+    }
 
     if (G.Wc.accept==false) {
       //all of this is the display function for the progressbars.
@@ -186,8 +252,8 @@ class ProgessBar {
 //this is the player 2 part of the equation so to speak
 
       if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {
-        float mproRP2W1 = constrain(map(proP1W1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W1 = constrain(map(proP1W1.y, 0, proP1W1.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W1 = constrain(map(curW1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W1 = constrain(map(curW1.y, 0, proP1W1.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -209,8 +275,8 @@ class ProgessBar {
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == 1) {   
-        float mproRP2W2 = constrain(map(proP1W2.x, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W2 = constrain(map(proP1W2.y, 0, proP1W2.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W2 = constrain(map(curW2.x, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W2 = constrain(map(curW2.y, 0, proP1W2.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -281,6 +347,7 @@ class ProgessBar {
   }
 
   void run() {
+    println(curW1, curW2, curW3, curW4);
     ProgressBarworker();
     ProgressBarscore();
   }

@@ -115,6 +115,7 @@ class Game {
   }
 
   void run() {
+
     //println(Lg.chol);
     // println(nr);
 
