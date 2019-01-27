@@ -11,7 +11,7 @@ class Level {
 
     switch (C) {
     case 0:
-    //this is level ones data. Copy and change this and you have a new level
+      //this is level ones data. Copy and change this and you have a new level
       frameCount = 0;
       UpgradePower[0] = new PVector(10, -10, 5) ;
       UpgradePower[1] = new PVector(-10, 10, 5) ;      
@@ -23,7 +23,7 @@ class Level {
       WorkPower[2] = new PVector(100, 100);      
       WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
-      tasknr = 15;
+      tasknr = 5;
 
       break;
 

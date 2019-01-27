@@ -1,4 +1,4 @@
-//vi skal i upgrade området gøre at man kan ikke gøre noget
+//vi skal i gøre at upgrad og task kan ses af spillern
 
 Game G;
 

@@ -1,20 +1,19 @@
 class ProgessBar {
 
   //this is probaly the most important class this litterally stores all the data.
-  
-  
+
+
   PFont f;
-<<<<<<< HEAD
-  int progressRed;
-  int progressBlue;
+
+  int progressRed = 0;
+  int progressBlue = 0;
 
 
-=======
-  int proR;
-  int proB;
+
+
   int t =6;
   boolean GO = false;
->>>>>>> workprogessogprogessbar
+
   PVector proRP2U1;
   PVector proRP2U2;
   PVector proRP2U3;
@@ -34,17 +33,15 @@ class ProgessBar {
   void ProgressBarscore() {
 
     //this handles the big progressbar at the top of the game screen
-    
+
     f = createFont("arial", 16, true);
-    stroke(0);
+    stroke(0);  
     strokeWeight(0);
     textAlign(LEFT);
 
-<<<<<<< HEAD
-    progressRed = 0;
-    progressBlue = 0;
-=======
->>>>>>> workprogessogprogessbar
+
+    //progressRed = 0;
+    //progressBlue = 0;
 
 
     float mproR = constrain(map(progressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
@@ -73,15 +70,10 @@ class ProgessBar {
 
 
   void ProgressBarworker() {
-<<<<<<< HEAD
-    
+
+
     //this handles all the individual progressbars
     //it stores their data in the max value and the curent value for each worker
-    
-    proP1W1 = G.level.WorkPower[0]/*+upgradeW1*/;
-    PVector curW1 = proP1W1/* -taskW1 */;
-=======
->>>>>>> workprogessogprogessbar
 
     if (t>5 && t< 25 && GO == false) {
       t++;
@@ -98,17 +90,23 @@ class ProgessBar {
     } 
     if (GO) {
 
-      //println(curW1.x-G.Wp.task[G.Wp.tasknr].x, G.Wp.taskW1.x);
+
       if (G.Wp.UpgadeBlocker[0] <= 0) {
         proP1W1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);
       }
 
-    if (G.Wp.UpgadeBlocker[1] <= 0) {   proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);}
+      if (G.Wp.UpgadeBlocker[1] <= 0) {   
+        proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);
+      }
 
-     if (G.Wp.UpgadeBlocker[2] <= 0) {  proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);}
+      if (G.Wp.UpgadeBlocker[2] <= 0) {  
+        proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);
+      }
 
 
-      if (G.Wp.UpgadeBlocker[3] <= 0) { proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);}
+      if (G.Wp.UpgadeBlocker[3] <= 0) { 
+        proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);
+      }
 
 
 
@@ -249,7 +247,7 @@ class ProgessBar {
 
 
 
-//this is the player 2 part of the equation so to speak
+      //this is the player 2 part of the equation so to speak
 
       if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {
         float mproRP2W1 = constrain(map(curW1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
@@ -347,7 +345,8 @@ class ProgessBar {
   }
 
   void run() {
-    println(curW1, curW2, curW3, curW4);
+    //println(curW1, curW2, curW3, curW4, progressRed);
+    println(progressRed);
     ProgressBarworker();
     ProgressBarscore();
   }

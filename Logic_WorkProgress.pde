@@ -28,6 +28,8 @@ class LogikWP {
   }
 
   void task() {
+    
+    //her bliver tasks lavet og udregnt indiveduelt for hver worker
 
     if (t >= 4 && t<= 19) {
       t++;
@@ -62,7 +64,7 @@ class LogikWP {
       taskW1 = PVector.add(taskW1, task[tasknr]);    
       work = !work;
       G.Wc.TaskW1 = 0;
-      println("hej");
+      //println("hej");
     }
     //if (G.Wc.TaskW1 == 1 && work && firstW1 == false) { 
     //  work = !work;
@@ -112,6 +114,7 @@ class LogikWP {
 
 
   void upgradeblock() {
+    // her bliver workeren stoppet med at kunne lave arbejegde hvis den er igang med at blive opgradetet
 
 
     if (G.Wc.UpgadeW1 && G.Wc.action1 && G.Wc.action2) {
@@ -138,7 +141,8 @@ class LogikWP {
   }
 
   void upgrade() {
-
+// her er udregningerne for opgraderingern
+    
     if (t >= 4 && t<= 19) {
       t++;
       upgradenr = int(random(5));
@@ -164,6 +168,8 @@ class LogikWP {
   }
 
   void addProgerss() {
+    //her bliver alt arbejdet worken har lavet udreget og lagt sammen
+    
 
     if (t>5 && t< 25 && GO == false) {
       t++;
@@ -229,19 +235,18 @@ class LogikWP {
     if (G.Wc.action1 && G.Wc.action2) {
 
 
-<<<<<<< HEAD
-      G.Pb.progressRed += DayProgress[4]; 
-      G.Pb.progressBlue+= 1000;
-=======
-      G.Pb.proR += DayProgressR[4]; 
-      G.Pb.proB +=  DayProgressB[4];
->>>>>>> workprogessogprogessbar
+
+      G.Pb.progressRed += DayProgressR[4];
+      G.Pb.progressBlue += DayProgressB[4];
+
+
+
       G.Wc.action1 = false;
       G.Wc.action2 = false;
     }
   }
 
-
+ 
   void run() {   
     upgrade();
     upgradeblock();
@@ -253,7 +258,7 @@ class LogikWP {
     //println(DayProgressR[4], DayProgressR[0]);
     //println(G.Wc.TaskW1, work, UpgadeBlocker[0], G.Wc.UpgadeW1, G.Wc.action1);
 
-    println(G.Wc.TaskW1, G.Wc.TaskW2, G.Wc.TaskW3, G.Wc.TaskW4);
+    //println(G.Wc.TaskW1, G.Wc.TaskW2, G.Wc.TaskW3, G.Wc.TaskW4);
     task() ;
     //println( G.Pb.curW1.x-task[tasknr].x, task[tasknr].x);
 
@@ -261,6 +266,6 @@ class LogikWP {
 
 
     addProgerss(); 
-    println(DayProgressR[4], DayProgressB[4], DayProgressR[1]);
+    println(DayProgressR[4], DayProgressB[4]);
   }
 }
