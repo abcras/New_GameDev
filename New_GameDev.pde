@@ -8,6 +8,7 @@ SoundFile MenuSound2;
 void setup() {
   size(800, 400);
   G = new Game();
+  //you can chose the sound you want to be played. However the program takes a long time to load the sounds because they are big.
   //MenuSound = new SoundFile(this, "Great Fairy's Fountain Theme.mp3");
   //MenuSound.loop();
   //MenuSound2 = new SoundFile(this, "Kingdom Hearts 2 - Dearly Beloved II.mp3");
@@ -20,7 +21,7 @@ void draw() {
 }
 
 boolean[] keys = new boolean[11];
-
+//this boolean handles all the key inputs.
 void keyPressed() {
   switch (key) {
   case ' ':
