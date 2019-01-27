@@ -29,12 +29,12 @@ class LogikWC {
 
 
   void highLight() {
-//this code highlights whatever the user is highlighting at the time.
-//it is a 3x3 grid. -1,-1 is upper left corner and 1,1 is lower right corner
+    //this code highlights whatever the user is highlighting at the time.
+    //it is a 3x3 grid. -1,-1 is upper left corner and 1,1 is lower right corner
 
-//this is for player 1
+    //this is for player 1
     if (P1Select.x == -1 && P1Select.y == -1) {
-//upper left    
+      //upper left    
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -140,7 +140,7 @@ class LogikWC {
 
 
 
-//this is for player 2
+    //this is for player 2
     if (P2Select.x == -1 && P2Select.y == -1) {
       //upper left
       fill(200);
@@ -292,7 +292,7 @@ class LogikWC {
   void choseP1() {
 
     //this is the code that changes where player 1 is acting
-    
+
     P1Select.x = constrain(P1Select.x, -1, 1);
     P1Select.y = constrain(P1Select.y, -1, 1);
     //this restrains the player to only within a 3x3 area
@@ -328,7 +328,7 @@ class LogikWC {
   void choseP2() {
 
     //this changes where player 2 is acting
-    
+
     P2Select.x = constrain(P2Select.x, -1, 1);
     P2Select.y = constrain(P2Select.y, -1, 1);
     //only within a 3x3 area
@@ -377,8 +377,7 @@ class LogikWC {
       G.Wp.work = !G.Wp.work;
       t++;
       G.Wp.t = 4;
-      action1 = true;
-      action2 = true;
+
 
       if (t>=G.level.tasknr) {
         println("hej");
@@ -390,6 +389,8 @@ class LogikWC {
         G.Wp.UpgadeBlocker[2]--; 
         G.Wp.UpgadeBlocker[3]--;
         G.Wp.progessing = true;
+        action1 = true;
+        action2 = true;
       }
     }
 

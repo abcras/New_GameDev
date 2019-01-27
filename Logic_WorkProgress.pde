@@ -239,7 +239,8 @@ class LogikWP {
       G.Pb.progressRed += DayProgressR[4];
       G.Pb.progressBlue += DayProgressB[4];
 
-
+      G.ES.scoreProgressRed.add(new Score(G.Pb.progressRed));
+      G.ES.scoreProgressBlue.add(new Score(G.Pb.progressBlue));
 
       G.Wc.action1 = false;
       G.Wc.action2 = false;
