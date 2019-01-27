@@ -90,14 +90,14 @@ class EndScreen {
       strokeWeight(1);
 
       stroke(100);
-      line(100, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100), 20+7*width/8, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100));
+      line(100, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100), 7*width/8, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100));
     } else {
       strokeWeight(1);
       stroke(255, 0, 0);
-      line(100, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100), 20+7*width/8, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100));
+      line(100, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100), 7*width/8, map(G.level.WinScore.x, 0, G.level.WinScore.x*2, 290, 100));
 
       stroke(0, 0, 255);
-      line(100, map(G.level.WinScore.y, 0, G.level.WinScore.y*2, 290, 100), 20+7*width/8, map(G.level.WinScore.y, 0, G.level.WinScore.y*2, 290, 100));
+      line(100, map(G.level.WinScore.y, 0, G.level.WinScore.y*2, 290, 100), 7*width/8, map(G.level.WinScore.y, 0, G.level.WinScore.y*2, 290, 100));
     }
 
     for (int i = 0; i<scoreProgressRed.size(); i++) {
