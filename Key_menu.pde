@@ -8,7 +8,7 @@ class Keymenu {
   Keymenu() {
     f = createFont("arial", 16, true);
   }
-  void bogstaver() { 
+  void tekst() { 
     textAlign(CENTER);
     fill(0);
     textFont(f, 35);
@@ -84,7 +84,7 @@ class Keymenu {
   }
 
   void highligt() {
-
+//the animation of how to change spots
     if (t<=45) { 
       fill(200);
       stroke(random(170, 250));
@@ -145,7 +145,7 @@ class Keymenu {
   }
 
   void run() {
-    bogstaver();
+    tekst();
 
     display();
     highligt(); 

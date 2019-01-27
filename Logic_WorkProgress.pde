@@ -57,8 +57,8 @@ class LogikWP {
     if (G.Wc.action1 && G.Wc.action2) {
 
 
-      G.Pb.proR += DayProgress[4]; 
-      G.Pb.proB+= 1000;
+      G.Pb.progressRed += DayProgress[4]; 
+      G.Pb.progressBlue+= 1000;
       G.Wc.action1 = false;
       G.Wc.action2 = false;
     }

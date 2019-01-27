@@ -5,8 +5,9 @@ class Game {
   int nr=0;
   int loc = 0;  
   int lvlcode = 0;
+  
+  //these are all the classes:
   Timer T = new Timer();
-
   Menu M = new Menu();
   LoadGame Lg =  new LoadGame();
   Keymenu Km = new Keymenu();
@@ -23,27 +24,33 @@ class Game {
   }
   void skift() {
     if (mousePressed && Km.leave) { 
+            //if the exit button is pressed in the keys menu
       loc = 0;
     }
     if (mousePressed && Lg.leave) { 
+      //if the exit button is pressed in the load game menu
       loc = 0;
     }
     if (mousePressed && Ec.Opt[2]) { 
-
+//if the main menu button is pressed in the ESC menu.
       loc = 0;
     }
     if (mousePressed && M.screen[2]) {   
+      //if new game is pressed on the start menu
       nr = 0;
       loc = 1;
     }
     if (mousePressed && M.screen[1]) { 
+//load game is pressed
       loc = 1;
     }
     if (mousePressed && M.screen[3]) {
+      //if keys are pressed on the start menu
       Km.t = 0;
       loc = 2;
     }
     if (mousePressed && M.screen[0]) { 
+      //if continue is pressed on the start menu
       loc = 5;
     }
 
@@ -96,11 +103,14 @@ class Game {
       lvlcode=11;
     }
     if (mousePressed && M.screen[4]) { 
+      //exits the game if the exit button is pressed in the start menu
       loc = -1;
     }  
     if (mousePressed && Ec.Opt[3]) {
+      //exits the game if the exit button is chosen in the ESC menu
       loc = -1;
     }
+    //this is a function that changes the data that is used for the level essentialy changes the level.
     level.changelevel(lvlcode);
   }
 
@@ -112,31 +122,29 @@ class Game {
     switch (loc) {
 
     case -1: 
+    //exits the game
       exit();
       break;
 
     case 0:
+    //this is the menu
       M.run();
       break;
 
-
-
     case 1:
+    //this is the load game menu
       Lg.run(); 
       Ec.run();
       break;
 
     case 2:
+    //this is the key menu
       Km.run(); 
       Ec.run();
       break;
 
-
-
-
     case 3:
-
-
+    //this is the main game
       T.run();
       Pb.run();
       Gb.run();
@@ -147,7 +155,8 @@ class Game {
       break;
 
     case 5:
-    ES.run();
+    //this is the end screen
+      ES.run();
       break;
     }
   }

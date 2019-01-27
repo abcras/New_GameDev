@@ -1,4 +1,7 @@
 class NewGame {
+  
+  //does this do anything???
+  
   PFont f; 
   boolean LVL1 = false;
   int cho = 255;

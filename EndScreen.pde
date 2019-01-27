@@ -15,8 +15,10 @@ class EndScreen {
 
 
   void addScore() {
-    scoreProgressRed.add(new Score(G.Pb.proR));
-    scoreProgressBlue.add(new Score(G.Pb.proB));
+    
+    //this function adds the current score whenether it is run. This should be run whenether the timer adds score to the total.
+    scoreProgressRed.add(new Score(G.Pb.progressRed));
+    scoreProgressBlue.add(new Score(G.Pb.progressBlue));
   }
 
   void startTimer(int c) {

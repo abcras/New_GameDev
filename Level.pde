@@ -1,6 +1,4 @@
 class Level {
-
-  int[] GData = new int[12];
   PVector[] UpgradePower = new PVector[5];
   PVector[] WorkPower= new PVector[4];
   PVector WinScore;
@@ -12,6 +10,7 @@ class Level {
 
     switch (C) {
     case 0:
+    //this is level ones data. Copy and change this and you have a new level
       frameCount = 0;
       UpgradePower[0] = new PVector(10, -10, 5) ;
       UpgradePower[1] = new PVector(-10, 10, 5) ;      

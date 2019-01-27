@@ -3,7 +3,7 @@ class LoadGame {
   PFont f; 
   boolean[] LVL = new boolean[12];
   int[] chol = new int[12];
-int levelCode;
+  int levelCode;
   int lea;
   boolean leave;
   int t;
@@ -14,6 +14,8 @@ int levelCode;
 
   void bord() {
 
+    //this draws all the necessary numbers at the right locations
+    
     fill(0, 0, 0); 
     textFont(f, 26);
     textAlign(CENTER);
@@ -183,6 +185,8 @@ int levelCode;
 
   void bordlogic() {    
 
+    //You can chose the level that you want to play.
+    
     if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
       chol[0] = 0;
       LVL[0] = true;

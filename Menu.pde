@@ -17,37 +17,49 @@ class Menu {
   }    
 
   void lvlChoiceBox() {
+    //continue box
     fill(cc, cc, 255);
     stroke(0);
     strokeWeight(2);
     rect(66, height*3/4-20, width*2/8, height/4-20);
+
     fill(0, 0, 0);
     textFont(f, 26);
     textAlign(CENTER);
     text("Continue", width*1/8+65, height*3/4+27);
+    //continue box
+
+    //new game box
     fill(cn, 255, cn);
     stroke(0);
     strokeWeight(2);
     rect(width*3/8, height*3/4-20, width*2/8, height/4-20);
+
     fill(0, 0, 0);
     textFont(f, 26);
     textAlign(CENTER);
     text("New Game", width*3/8+99, height*3/4+27);
+    //new game box
+
+    //load game box
     fill(255, cl, cl);
     stroke(0);
     strokeWeight(2);
     rect(width*4/8+(66*2), height*3/4-20, width*2/8, height/4-20);
+
     fill(0, 0, 0);
     textFont(f, 26);
     textAlign(CENTER);
     text("Load Game", width*5/8+(66*2), height*3/4+27);
+    //load game box
 
     textAlign(LEFT);
   }
 
-  void lvlChioiceLogic() {
+  void lvlChoiceLogic() {
 
     if (mouseX>=66 && mouseX<=266&&mouseY>=280&&mouseY<=360) {
+      //continue box
       cc = 0;
       screen[0] = true;
     } else {
@@ -55,6 +67,7 @@ class Menu {
       screen[0] = false;
     }
     if (mouseX>=300 && mouseX<=499 && mouseY>=280 && mouseY<=360) {
+      //new game box
       cn = 0;
       screen[2] = true;
     } else {
@@ -62,7 +75,7 @@ class Menu {
       screen[2] = false;
     }
     if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
-
+      //load game box
       G.Lg.t=0;
       G.nr=12;
       cl = 0;
@@ -75,6 +88,7 @@ class Menu {
 
   void keymenu() {
     t++;
+    //this is the part that handles if the player selects the key menu option.
     fill(km, 255, 255);
     stroke(0);
     strokeWeight(2);
@@ -94,7 +108,7 @@ class Menu {
     textAlign(LEFT);
   }
 
-  void eksit() {
+  void terminate() {
     fill(255, ek, 255);
     stroke(0);
     strokeWeight(2);
@@ -117,10 +131,10 @@ class Menu {
 
   void run() {
 
-    eksit();
+    terminate();
     keymenu();
     lvlChoiceBox();
-    lvlChioiceLogic();
+    lvlChoiceLogic();
 
     fill(0, 0, 0);
     textFont(f, 26);

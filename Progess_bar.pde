@@ -1,8 +1,11 @@
 class ProgessBar {
 
+  //this is probaly the most important class this litterally stores all the data.
+  
+  
   PFont f;
-  int proR;
-  int proB;
+  int progressRed;
+  int progressBlue;
 
 
   PVector proRP2U1;
@@ -20,17 +23,19 @@ class ProgessBar {
 
   void ProgressBarscore() {
 
+    //this handles the big progressbar at the top of the game screen
+    
     f = createFont("arial", 16, true);
     stroke(0);
     strokeWeight(0);
     textAlign(LEFT);
 
-    proR = 0;
-    proB = 0;
+    progressRed = 0;
+    progressBlue = 0;
 
 
-    float mproR = constrain(map(proR, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
-    float mproB = constrain(map(proB, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
+    float mproR = constrain(map(progressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
+    float mproB = constrain(map(progressBlue, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
 
 
     fill(0);
@@ -49,12 +54,16 @@ class ProgessBar {
 
     fill(255);
     textFont(f, 13);
-    text(proR+" Red", 53, 23);
-    text(proB+" Blue", 53, 39);
+    text(progressRed+" Red", 53, 23);
+    text(progressBlue+" Blue", 53, 39);
   }
 
 
   void ProgressBarworker() {
+    
+    //this handles all the individual progressbars
+    //it stores their data in the max value and the curent value for each worker
+    
     proP1W1 = G.level.WorkPower[0]/*+upgradeW1*/;
     PVector curW1 = proP1W1/* -taskW1 */;
 
@@ -68,6 +77,8 @@ class ProgessBar {
     PVector curW4 = proP1W4/* -taskW4 */;
 
     if (G.Wc.accept==false) {
+      //all of this is the display function for the progressbars.
+      //it runs on the highlight function from the tab Logic_WorkChoice
       if (G.Wc.P1Select.x == -1 && G.Wc.P1Select.y == 0) { 
 
         float mproRP1W1 = constrain(map(curW1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
@@ -172,7 +183,7 @@ class ProgessBar {
 
 
 
-
+//this is the player 2 part of the equation so to speak
 
       if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {
         float mproRP2W1 = constrain(map(proP1W1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);

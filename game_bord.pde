@@ -5,6 +5,11 @@ class GameBoard {
 
 
   void PlayerField() {
+    
+    //this draws the stuff
+    //this is a mess
+    //Maybe an array of variables would have been better
+    
     f = createFont("arial", 16, true);
 
 
@@ -18,6 +23,7 @@ class GameBoard {
     fill(0, 150, 0);
     stroke(0);
     strokeWeight(2);
+    
     //P1 små boxe
     rect(width/8, height/4, width*1/8, height*1/4);//øvereste
     rect(width*1/4, height*2/4, height*1/4, width*1/8);//højre
@@ -51,6 +57,8 @@ class GameBoard {
     textAlign(LEFT);
   }
   void time() {
+    //this function displays the time in the upper right corner of the game board.
+    
     f = createFont("arial", 16, true);
     fill(150, 155, 155);
     stroke(0);

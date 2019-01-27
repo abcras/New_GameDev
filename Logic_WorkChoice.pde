@@ -22,8 +22,12 @@ class LogikWC {
 
 
   void highLight() {
+//this code highlights whatever the user is highlighting at the time.
+//it is a 3x3 grid. -1,-1 is upper left corner and 1,1 is lower right corner
 
+//this is for player 1
     if (P1Select.x == -1 && P1Select.y == -1) {
+//upper left    
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -32,6 +36,7 @@ class LogikWC {
     }
 
     if (P1Select.x == 0 && P1Select.y == -1) {
+      //upper middle
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -39,6 +44,7 @@ class LogikWC {
       accepted = true;
     }    
     if (P1Select.x == 1 && P1Select.y == -1) {
+      //upper right
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -47,6 +53,7 @@ class LogikWC {
     }    
 
     if (P1Select.x == -1 && P1Select.y == 0) {
+      //middle left
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -54,6 +61,7 @@ class LogikWC {
       accepted = true;
     }    
     if (P1Select.x == 0 && P1Select.y == 0) {
+      //middle middle
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -62,6 +70,7 @@ class LogikWC {
     }    
 
     if (P1Select.x == 1 && P1Select.y == 0) {
+      //middle right
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -69,6 +78,7 @@ class LogikWC {
       accepted = true;
     }    
     if (P1Select.x == -1 && P1Select.y == 1) {
+      //lower left
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -77,6 +87,7 @@ class LogikWC {
     }    
 
     if (P1Select.x == 0 && P1Select.y == 1) {
+      //lower middle
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -84,6 +95,7 @@ class LogikWC {
       accepted = true;
     }    
     if (P1Select.x == 1 && P1Select.y == 1) {
+      //lower right
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -93,8 +105,9 @@ class LogikWC {
 
 
 
-
+//this is for player 2
     if (P2Select.x == -1 && P2Select.y == -1) {
+      //upper left
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -107,6 +120,7 @@ class LogikWC {
     }
 
     if (P2Select.x == 0 && P2Select.y == -1) {
+      //upper middle
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -115,6 +129,7 @@ class LogikWC {
       UpgadeW1 = true;
     }    
     if (P2Select.x == 1 && P2Select.y == -1) {
+      //upper right
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -127,6 +142,7 @@ class LogikWC {
     }    
 
     if (P2Select.x == -1 && P2Select.y == 0) {
+      //middle left
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -135,6 +151,7 @@ class LogikWC {
       UpgadeW2 = true;
     }    
     if (P2Select.x == 0 && P2Select.y == 0) {
+      //middle middle
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -147,6 +164,7 @@ class LogikWC {
     }    
 
     if (P2Select.x == 1 && P2Select.y == 0) {
+      //middle right
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -155,6 +173,7 @@ class LogikWC {
       UpgadeW3 = true;
     }    
     if (P2Select.x == -1 && P2Select.y == 1) {
+      //lower left
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -167,6 +186,7 @@ class LogikWC {
     }    
 
     if (P2Select.x == 0 && P2Select.y == 1) {
+      //lower middle
       fill(0, 200, 0);
       stroke(0, random(170, 250), 0);
       strokeWeight(2);
@@ -175,6 +195,7 @@ class LogikWC {
       UpgadeW4 = true;
     }    
     if (P2Select.x == 1 && P2Select.y == 1) {
+      //lower right
       fill(200);
       stroke(random(170, 250));
       strokeWeight(2);
@@ -188,7 +209,9 @@ class LogikWC {
   }
 
   void acceptHighLight() {
+    //this codes highlights the players choice when accepting their upgrade and work choice
     if (acceptP1 == -1) {
+      //yes p1
       fill(200, 0, 0);
       stroke(200, 0, 0);
       strokeWeight(2);
@@ -196,6 +219,7 @@ class LogikWC {
     }
 
     if (acceptP1 == 1) {
+      //no p1
       fill(200, 0, 0);
       stroke(200, 0, 0);
       strokeWeight(2);
@@ -203,6 +227,7 @@ class LogikWC {
     }
 
     if (acceptP2 == -1) {
+      //yes p2
       fill(200, 0, 0);
       stroke(200, 0, 0);
       strokeWeight(2);
@@ -210,6 +235,7 @@ class LogikWC {
     }
 
     if (acceptP2 == 1) {
+      //no p2
       fill(200, 0, 0);
       stroke(200, 0, 0);
       strokeWeight(2);
@@ -225,8 +251,11 @@ class LogikWC {
 
   void choseP1() {
 
+    //this is the code that changes where player 1 is acting
+    
     P1Select.x = constrain(P1Select.x, -1, 1);
     P1Select.y = constrain(P1Select.y, -1, 1);
+    //this restrains the player to only within a 3x3 area
 
     if (keys[4] && G.T.Bt1 == 0) { //w / up
       P1Select.y -= 1;
@@ -258,8 +287,11 @@ class LogikWC {
 
   void choseP2() {
 
+    //this changes where player 2 is acting
+    
     P2Select.x = constrain(P2Select.x, -1, 1);
     P2Select.y = constrain(P2Select.y, -1, 1);
+    //only within a 3x3 area
 
     if (keys[8] && G.T.Bt2 == 0) { // up
       P2Select.y -= 1;
@@ -284,7 +316,7 @@ class LogikWC {
     stroke(200, 0, 0);
     strokeWeight(2);
     rect(0, 150, width, 75);
-    f = createFont("arIal", 20, true);
+    f = createFont("arial", 20, true);
     fill(255, 0, 0);
     textFont(f, 36);
     textAlign(CENTER);
