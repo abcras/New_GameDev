@@ -122,6 +122,15 @@ class escMenu {
 
 
   void run() {
+    if (mousePressed && Opt[1]) {
+      G.Pb.curW1.set(G.level.WorkPower[0]);
+      G.Pb.curW2.set(G.level.WorkPower[1]);
+      G.Pb.curW3.set(G.level.WorkPower[2]);
+      G.Pb.curW4.set(G.level.WorkPower[3]);
+      G.Pb.progressRed = 0;
+      G.Pb.progressBlue = 0;
+      es = false;
+    }
     //Hvis ESC bliver trykket åbner det menuen og lukker den efter om menuen er åben eller ej
     if (keys[9] && G.T.es==0) {
       G.T.es=1;
@@ -130,7 +139,6 @@ class escMenu {
     //hvis continue bliver valgt
     if (mousePressed && Opt[0]) {
       es = false;
-
     }
     //hvis menu bliver valgt
     if (mousePressed && Opt[2]) {

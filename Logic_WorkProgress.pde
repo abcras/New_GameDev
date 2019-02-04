@@ -28,7 +28,7 @@ class LogikWP {
   }
 
   void task() {
-    
+
     //her bliver tasks lavet og udregnt indiveduelt for hver worker
 
     if (t >= 4 && t<= 19) {
@@ -62,7 +62,7 @@ class LogikWP {
     if (UpgadeBlocker[0] <= 0 && G.Wc.TaskW1 == 1 && work) {
       //if (G.Wc.TaskW1 == 1 && work) {
       taskW1 = PVector.add(taskW1, task[tasknr]);    
-      work = !work;
+      work = false;
       G.Wc.TaskW1 = 0;
       //println("hej");
     }
@@ -76,7 +76,7 @@ class LogikWP {
 
     if (UpgadeBlocker[1] <= 0 && G.Wc.TaskW2 == 1 && work ) {
       taskW2 = PVector.add(taskW2, task[tasknr]);      
-      work = !work;
+      work = false;
       G.Wc.TaskW2 = 0;
     }
     //if (G.Wc.TaskW2 == 1 && work && firstW2 == false) { 
@@ -89,7 +89,7 @@ class LogikWP {
 
     if (UpgadeBlocker[2] <= 0 && G.Wc.TaskW3 == 1 && work) {
       taskW3 = PVector.add(taskW3, task[tasknr]);
-      work = !work;
+      work = false;
       G.Wc.TaskW3 = 0;
     }
     //if (G.Wc.TaskW3 == 1 && work && firstW3 == false) { 
@@ -102,7 +102,7 @@ class LogikWP {
 
     if (UpgadeBlocker[3] <= 0 && G.Wc.TaskW4 == 1 && work) {
       taskW4 = PVector.add(taskW4, task[tasknr]);
-      work = !work;
+      work = false;
       G.Wc.TaskW4 = 0;
     }
     //if (G.Wc.TaskW4 == 1 && work && firstW4 == false) { 
@@ -117,51 +117,58 @@ class LogikWP {
     // her bliver workeren stoppet med at kunne lave arbejegde hvis den er igang med at blive opgradetet
 
 
-    if (G.Wc.UpgadeW1 && G.Wc.action1 && G.Wc.action2) {
-      G.Wc.action1=false;
-      G.Wc.action2=false;
-      UpgadeBlocker[0]=int(G.level.UpgradePower[2].z);
-      println(" hej");
+    if (G.Wc.UpgadeW1 &&  G.Wc.action) { 
+      UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
     }
-    if ( G.Wc.UpgadeW2 && G.Wc.action1 && G.Wc.action2) {
-      G.Wc.action1=false;
-      G.Wc.action2=false;
-      UpgadeBlocker[1]=int(G.level.UpgradePower[2].z);
+    if ( G.Wc.UpgadeW2 &&  G.Wc.action) {
+      UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
     }
-    if ( G.Wc.UpgadeW3 && G.Wc.action1 && G.Wc.action2) {
-      G.Wc.action1=false;
-      G.Wc.action2=false;
-      UpgadeBlocker[2]=int(G.level.UpgradePower[2].z);
+    if ( G.Wc.UpgadeW3 &&  G.Wc.action) { 
+      UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
     }
-    if ( G.Wc.UpgadeW4 && G.Wc.action1 && G.Wc.action2) {
-      G.Wc.action1=false;
-      G.Wc.action2=false;
-      UpgadeBlocker[3]=int(G.level.UpgradePower[2].z);
+    if ( G.Wc.UpgadeW4 &&  G.Wc.action) { 
+      UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
+    }
+    if (UpgadeBlocker[0] < 0) {
+      UpgadeBlocker[0] = 0;
+    }
+    if (UpgadeBlocker[1] < 0 ) {
+      UpgadeBlocker[1] = 0;
+    }
+    if (UpgadeBlocker[2] < 0) {
+      UpgadeBlocker[2] = 0;
+    }
+    if (UpgadeBlocker[3] < 0) {
+      UpgadeBlocker[3] = 0;
     }
   }
 
   void upgrade() {
-// her er udregningerne for opgraderingern
-    
+    // her er udregningerne for opgraderingern
+
     if (t >= 4 && t<= 19) {
       t++;
       upgradenr = int(random(5));
     }
 
 
-    if (G.Wc.UpgadeW1 && G.Wc.action1 && G.Wc.action2) { 
+    if (G.Wc.UpgadeW1 && G.Wc.action) { 
 
       upgradeW1 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
     }
-    if (G.Wc.UpgadeW2 && G.Wc.action1 && G.Wc.action2) { 
+    if (G.Wc.UpgadeW2 &&  G.Wc.action) { 
 
       upgradeW2 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
     }
-    if (G.Wc.UpgadeW3 && G.Wc.action1 && G.Wc.action2) { 
+    if (G.Wc.UpgadeW3 &&  G.Wc.action) { 
 
       upgradeW3 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
     }
-    if (G.Wc.UpgadeW4 && G.Wc.action1 && G.Wc.action2) { 
+    if (G.Wc.UpgadeW4 &&  G.Wc.action) { 
 
       upgradeW4 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
     }
@@ -169,7 +176,7 @@ class LogikWP {
 
   void addProgerss() {
     //her bliver alt arbejdet worken har lavet udreget og lagt sammen
-    
+
 
     if (t>5 && t< 25 && GO == false) {
       t++;
@@ -208,18 +215,7 @@ class LogikWP {
         DayProgressB[3]=0;
       }
 
-      if (UpgadeBlocker[0] < 0) {
-        UpgadeBlocker[0] = 0;
-      }
-      if (UpgadeBlocker[1] < 0 ) {
-        UpgadeBlocker[1] = 0;
-      }
-      if (UpgadeBlocker[2] < 0) {
-        UpgadeBlocker[2] = 0;
-      }
-      if (UpgadeBlocker[3] < 0) {
-        UpgadeBlocker[3] = 0;
-      }
+
 
       if (progessing) {
         t++;
@@ -247,7 +243,7 @@ class LogikWP {
     }
   }
 
- 
+
   void run() {   
     upgrade();
     upgradeblock();
@@ -265,8 +261,7 @@ class LogikWP {
 
 
 
-
-    addProgerss(); 
-    println(DayProgressR[4], DayProgressB[4]);
+    println(taskW1, taskW2, taskW3, taskW4, work+"hej");
+    addProgerss();
   }
 }

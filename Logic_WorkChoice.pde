@@ -6,6 +6,7 @@ class LogikWC {
   boolean accept = false;
   boolean accepted = false;
   boolean accepted2 = false;
+  boolean action = false; 
   boolean action1 = false; 
   boolean action2 = false;
   PVector P1Select = new PVector(0, 0);
@@ -85,6 +86,7 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*1/8, height*2/4, height*1/4, width*1/8);
+      G.Wp.work = false;
       accepted = false;
       G.Wc.TaskW1 = 0;
       G.Wc.TaskW2 = 0;
@@ -374,10 +376,10 @@ class LogikWC {
       acceptP2 = 0;
       acceptP1 = 0; 
 
-      G.Wp.work = !G.Wp.work;
+      G.Wp.work = true;
       t++;
       G.Wp.t = 4;
-
+      action=true;
 
       if (t>=G.level.tasknr) {
         println("hej");
