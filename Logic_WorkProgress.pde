@@ -59,57 +59,53 @@ class LogikWP {
     task[8] = new PVector(30, 25);
     task[9] = new PVector(25, 30); 
 
-    if (UpgadeBlocker[0] <= 0 && G.Wc.TaskW1 == 1 && work) {
-      //if (G.Wc.TaskW1 == 1 && work) {
-      taskW1 = PVector.add(taskW1, task[tasknr]);    
+
+    if (work) {
+      if (UpgadeBlocker[0] <= 0 && G.Wc.TaskW1 == 1) {
+        //if (G.Wc.TaskW1 == 1 && work) {
+        taskW1 = PVector.add(taskW1, task[tasknr]);     
+        G.Wc.TaskW1 = 0;
+
+        //println("hej");
+      }
+      //if (G.Wc.TaskW1 == 1 && work && firstW1 == false) { 
+      //  work = !work;
+      //  G.Wc.TaskW1 = 0;
+      //  taskW1.add(task[0]); 
+      //} 
+
+
+
+      if (UpgadeBlocker[1] <= 0 && G.Wc.TaskW2 == 1) {
+        taskW2 = PVector.add(taskW2, task[tasknr]);     
+        G.Wc.TaskW2 = 0;
+      }
+      //if (G.Wc.TaskW2 == 1 && work && firstW2 == false) { 
+      //  work = !work;
+      //  G.Wc.TaskW2 = 0;
+      //  G.Pb.curW2.sub(task[0]);
+      //}
+
+
+
+      if (UpgadeBlocker[2] <= 0 && G.Wc.TaskW3 == 1) {
+        taskW3 = PVector.add(taskW3, task[tasknr]);   
+        G.Wc.TaskW3 = 0;
+      }
+      //if (G.Wc.TaskW3 == 1 && work && firstW3 == false) { 
+      //  work = !work;
+      //  G.Wc.TaskW3 = 0;
+      //  G.Pb.curW3.sub(task[0]);
+      //}
+
+
+
+      if (UpgadeBlocker[3] <= 0 && G.Wc.TaskW4 == 1) {
+        taskW4 = PVector.add(taskW4, task[tasknr]);
+        G.Wc.TaskW4 = 0;
+      }
       work = false;
-      G.Wc.TaskW1 = 0;
-      //println("hej");
     }
-    //if (G.Wc.TaskW1 == 1 && work && firstW1 == false) { 
-    //  work = !work;
-    //  G.Wc.TaskW1 = 0;
-    //  taskW1.add(task[0]); 
-    //} 
-
-
-
-    if (UpgadeBlocker[1] <= 0 && G.Wc.TaskW2 == 1 && work ) {
-      taskW2 = PVector.add(taskW2, task[tasknr]);      
-      work = false;
-      G.Wc.TaskW2 = 0;
-    }
-    //if (G.Wc.TaskW2 == 1 && work && firstW2 == false) { 
-    //  work = !work;
-    //  G.Wc.TaskW2 = 0;
-    //  G.Pb.curW2.sub(task[0]);
-    //}
-
-
-
-    if (UpgadeBlocker[2] <= 0 && G.Wc.TaskW3 == 1 && work) {
-      taskW3 = PVector.add(taskW3, task[tasknr]);
-      work = false;
-      G.Wc.TaskW3 = 0;
-    }
-    //if (G.Wc.TaskW3 == 1 && work && firstW3 == false) { 
-    //  work = !work;
-    //  G.Wc.TaskW3 = 0;
-    //  G.Pb.curW3.sub(task[0]);
-    //}
-
-
-
-    if (UpgadeBlocker[3] <= 0 && G.Wc.TaskW4 == 1 && work) {
-      taskW4 = PVector.add(taskW4, task[tasknr]);
-      work = false;
-      G.Wc.TaskW4 = 0;
-    }
-    //if (G.Wc.TaskW4 == 1 && work && firstW4 == false) { 
-    //  work = !work;
-    //  G.Wc.TaskW4 = 0;
-    //  G.Pb.curW4.sub(task[0]);
-    //}
   }
 
 
@@ -117,19 +113,19 @@ class LogikWP {
     // her bliver workeren stoppet med at kunne lave arbejegde hvis den er igang med at blive opgradetet
 
 
-    if (G.Wc.UpgadeW1 &&  G.Wc.action) { 
+    if (G.Wc.UpgadeW1 &&  G.Wc.action && UpgadeBlocker[0]==0) { 
       UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
       G.Wc.action=false;
     }
-    if ( G.Wc.UpgadeW2 &&  G.Wc.action) {
+    if ( G.Wc.UpgadeW2 &&  G.Wc.action && UpgadeBlocker[0]==0) {
       UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
       G.Wc.action=false;
     }
-    if ( G.Wc.UpgadeW3 &&  G.Wc.action) { 
+    if ( G.Wc.UpgadeW3 &&  G.Wc.action && UpgadeBlocker[2]==0) { 
       UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
       G.Wc.action=false;
     }
-    if ( G.Wc.UpgadeW4 &&  G.Wc.action) { 
+    if ( G.Wc.UpgadeW4 &&  G.Wc.action && UpgadeBlocker[3]==0) { 
       UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
       G.Wc.action=false;
     }
@@ -187,29 +183,29 @@ class LogikWP {
     } 
     if (GO) {
       if (UpgadeBlocker[0] <= 0) {
-        DayProgressR[0]=G.Pb.proP1W1.x-G.Pb.curW1.x;
-        DayProgressB[0]=G.Pb.proP1W1.y-G.Pb.curW1.y;
+        DayProgressR[0]=G.Pb.proW1.x-G.Pb.curW1.x;
+        DayProgressB[0]=G.Pb.proW1.y-G.Pb.curW1.y;
       } else {
         DayProgressR[0]=0;
         DayProgressB[0]=0;
       }
       if (UpgadeBlocker[1] <= 0) {
-        DayProgressR[1]=G.Pb.proP1W2.x-G.Pb.curW2.x;
-        DayProgressB[1]=G.Pb.proP1W2.y-G.Pb.curW2.y;
+        DayProgressR[1]=G.Pb.proW2.x-G.Pb.curW2.x;
+        DayProgressB[1]=G.Pb.proW2.y-G.Pb.curW2.y;
       } else {
         DayProgressR[1]=0;
         DayProgressB[1]=0;
       }
       if (UpgadeBlocker[2] <= 0) {
-        DayProgressR[2]=G.Pb.proP1W3.x-G.Pb.curW3.x;
-        DayProgressB[2]=G.Pb.proP1W3.y-G.Pb.curW3.y;
+        DayProgressR[2]=G.Pb.proW3.x-G.Pb.curW3.x;
+        DayProgressB[2]=G.Pb.proW3.y-G.Pb.curW3.y;
       } else {
         DayProgressR[2]=0;
         DayProgressB[2]=0;
       }
       if (UpgadeBlocker[3] <= 0) {
-        DayProgressR[3]=G.Pb.proP1W4.x-G.Pb.curW4.x;
-        DayProgressB[3]=G.Pb.proP1W4.y-G.Pb.curW4.y;
+        DayProgressR[3]=G.Pb.proW4.x-G.Pb.curW4.x;
+        DayProgressB[3]=G.Pb.proW4.y-G.Pb.curW4.y;
       } else {
         DayProgressR[3]=0;
         DayProgressB[3]=0;

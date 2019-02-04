@@ -18,10 +18,10 @@ class ProgessBar {
   PVector proRP2U2;
   PVector proRP2U3;
   PVector proRP2U4;
-  PVector proP1W1;
-  PVector proP1W2;
-  PVector proP1W3;
-  PVector proP1W4;
+  PVector proW1;
+  PVector proW2;
+  PVector proW3;
+  PVector proW4;
   PVector curW1 = new PVector(0, 0);
   PVector curW2 = new PVector(0, 0);
   PVector curW3 = new PVector(0, 0);
@@ -92,36 +92,36 @@ class ProgessBar {
 
 
       if (G.Wp.UpgadeBlocker[0] <= 0) {
-        proP1W1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);
+        proW1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);
       }
 
       if (G.Wp.UpgadeBlocker[1] <= 0) {   
-        proP1W2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);
+        proW2 = G.level.WorkPower[1].add(G.Wp.upgradeW2);
       }
 
       if (G.Wp.UpgadeBlocker[2] <= 0) {  
-        proP1W3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);
+        proW3 = G.level.WorkPower[2].add(G.Wp.upgradeW3);
       }
 
 
       if (G.Wp.UpgadeBlocker[3] <= 0) { 
-        proP1W4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);
+        proW4 = G.level.WorkPower[3].add(G.Wp.upgradeW4);
       }
 
 
 
       println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
       if (int(curW1.x-G.Wp.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.Wp.task[G.Wp.tasknr].y) > 4) {
-        curW1 = PVector.sub(proP1W1, G.Wp.taskW1);
+        curW1 = PVector.sub(proW1, G.Wp.taskW1);
       }
       if (int(curW2.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.Wp.task[G.Wp.tasknr].y) > 0) {    
-        curW2 = PVector.sub(proP1W2, G.Wp.taskW2);
+        curW2 = PVector.sub(proW2, G.Wp.taskW2);
       } 
       if (int(curW3.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW3.y-G.Wp.task[G.Wp.tasknr].y) > 0) { 
-        curW3 = PVector.sub(proP1W3, G.Wp.taskW3);
+        curW3 = PVector.sub(proW3, G.Wp.taskW3);
       } 
       if (int(curW4.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW4.y-G.Wp.task[G.Wp.tasknr].y) > 0) {
-        curW4 = PVector.sub(proP1W4, G.Wp.taskW4);
+        curW4 = PVector.sub(proW4, G.Wp.taskW4);
       }
     }
 
@@ -133,10 +133,10 @@ class ProgessBar {
         G.Wp.taskW2.set(0, 0);
         G.Wp.taskW3.set(0, 0);
         G.Wp.taskW4.set(0, 0);
-        curW1.set(proP1W1);
-        curW2.set(proP1W2);
-        curW3.set(proP1W3);
-        curW4.set(proP1W4);
+        curW1.set(proW1);
+        curW2.set(proW2);
+        curW3.set(proW3);
+        curW4.set(proW4);
       }
     }
 
@@ -145,8 +145,8 @@ class ProgessBar {
       //it runs on the highlight function from the tab Logic_WorkChoice
       if (G.Wc.P1Select.x == -1 && G.Wc.P1Select.y == 0) { 
 
-        float mproRP1W1 = constrain(map(curW1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W1 = constrain(map(curW1.y, 0, proP1W1.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP1W1 = constrain(map(curW1.x, 0, proW1.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W1 = constrain(map(curW1.y, 0, proW1.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -171,8 +171,8 @@ class ProgessBar {
 
 
 
-        float mproRP1W2 = constrain(map(curW2.x, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W2 = constrain(map(curW2.y, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP1W2 = constrain(map(curW2.x, 0, proW2.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W2 = constrain(map(curW2.y, 0, proW2.x, 0, width*3/8-20), 0, width*3/8-20);
 
         fill(0);
         stroke(100);
@@ -196,8 +196,8 @@ class ProgessBar {
 
 
 
-        float mproRP1W3 = constrain(map(curW3.x, 0, proP1W3.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W3 = constrain(map(curW3.y, 0, proP1W3.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP1W3 = constrain(map(curW3.x, 0, proW3.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W3 = constrain(map(curW3.y, 0, proW3.x, 0, width*3/8-20), 0, width*3/8-20);
 
         fill(0);
         stroke(100);
@@ -221,8 +221,8 @@ class ProgessBar {
 
 
 
-        float mproRP1W4 = constrain(map(curW4.x, 0, proP1W4.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W4 = constrain(map(curW4.y, 0, proP1W4.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP1W4 = constrain(map(curW4.x, 0, proW4.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W4 = constrain(map(curW4.y, 0, proW4.x, 0, width*3/8-20), 0, width*3/8-20);
 
         fill(0);
         stroke(100);
@@ -250,8 +250,8 @@ class ProgessBar {
       //this is the player 2 part of the equation so to speak
 
       if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {
-        float mproRP2W1 = constrain(map(curW1.x, 0, proP1W1.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W1 = constrain(map(curW1.y, 0, proP1W1.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W1 = constrain(map(curW1.x, 0, proW1.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W1 = constrain(map(curW1.y, 0, proW1.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -268,13 +268,13 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proP1W1.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proP1W1.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(proW1.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(proW1.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == 1) {   
-        float mproRP2W2 = constrain(map(curW2.x, 0, proP1W2.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W2 = constrain(map(curW2.y, 0, proP1W2.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W2 = constrain(map(curW2.x, 0, proW2.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W2 = constrain(map(curW2.y, 0, proW2.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -291,13 +291,13 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proP1W2.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proP1W2.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(proW2.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(proW2.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 1 && G.Wc.P2Select.y == 0) {
-        float mproRP2W3 = constrain(map(curW3.x, 0, proP1W3.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W3 = constrain(map(curW3.y, 0, proP1W3.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W3 = constrain(map(curW3.x, 0, proW3.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W3 = constrain(map(curW3.y, 0, proW3.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
         fill(0);
@@ -314,13 +314,13 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proP1W3.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proP1W3.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(proW3.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(proW3.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == -1) {
-        float mproRP2W4 = constrain(map(curW4.x, 0, proP1W4.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP2W4 = constrain(map(curW4.y, 0, proP1W4.y, 0, width*3/8-20), 0, width*3/8-20);
+        float mproRP2W4 = constrain(map(curW4.x, 0, proW4.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP2W4 = constrain(map(curW4.y, 0, proW4.y, 0, width*3/8-20), 0, width*3/8-20);
 
 
 
@@ -338,8 +338,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proP1W4.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proP1W4.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(proW4.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(proW4.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
     }
   }

@@ -77,12 +77,14 @@ class Menu {
     if (mouseX>=532 && mouseX<=732 && mouseY>=280 && mouseY<=360) {
       //load game box
       G.Lg.t=0;
-      G.nr=12;
       cl = 0;
       screen[1] = true;
     } else {
       cl = 255;
       screen[1] = false;
+    }
+    if (mouseX>=0 && mouseX<=80 && mouseY>=390 && mouseY<=height && t >= 10) {
+      G.nr=12;
     }
   }
 

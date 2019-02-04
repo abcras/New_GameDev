@@ -50,6 +50,7 @@ class escMenu {
       G.Lg.LVL[9]=false; 
       G.Lg.LVL[10]=false; 
       G.Lg.LVL[11]=false;
+      
     } else {
       chol[2] = 255;
       Opt[2] = false;

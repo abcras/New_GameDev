@@ -86,12 +86,13 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*1/8, height*2/4, height*1/4, width*1/8);
-      G.Wp.work = false;
+      
       accepted = false;
       G.Wc.TaskW1 = 0;
       G.Wc.TaskW2 = 0;
       G.Wc.TaskW3 = 0;
       G.Wc.TaskW4 = 0;
+      
     }    
 
     if (P1Select.x == 1 && P1Select.y == 0) {
