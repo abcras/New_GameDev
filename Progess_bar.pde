@@ -172,7 +172,7 @@ class ProgessBar {
 
 
         float mproRP1W2 = constrain(map(curW2.x, 0, proW2.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W2 = constrain(map(curW2.y, 0, proW2.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W2 = constrain(map(curW2.y, 0, proW2.y, 0, width*3/8-20), 0, width*3/8-20);
 
         fill(0);
         stroke(100);
@@ -197,7 +197,7 @@ class ProgessBar {
 
 
         float mproRP1W3 = constrain(map(curW3.x, 0, proW3.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W3 = constrain(map(curW3.y, 0, proW3.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W3 = constrain(map(curW3.y, 0, proW3.y, 0, width*3/8-20), 0, width*3/8-20);
 
         fill(0);
         stroke(100);
@@ -222,7 +222,7 @@ class ProgessBar {
 
 
         float mproRP1W4 = constrain(map(curW4.x, 0, proW4.x, 0, width*3/8-20), 0, width*3/8-20);
-        float mproBP1W4 = constrain(map(curW4.y, 0, proW4.x, 0, width*3/8-20), 0, width*3/8-20);
+        float mproBP1W4 = constrain(map(curW4.y, 0, proW4.y, 0, width*3/8-20), 0, width*3/8-20);
 
         fill(0);
         stroke(100);
@@ -268,8 +268,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proW1.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proW1.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW1.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(curW1.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == 1) {   
@@ -291,8 +291,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proW2.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proW2.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW2.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(curW2.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 1 && G.Wc.P2Select.y == 0) {
@@ -314,8 +314,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proW3.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proW3.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW3.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(curW3.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == -1) {
@@ -338,8 +338,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(proW4.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(proW4.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW4.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
+        text(curW4.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
       }
     }
   }
