@@ -50,7 +50,6 @@ class escMenu {
       G.Lg.LVL[9]=false; 
       G.Lg.LVL[10]=false; 
       G.Lg.LVL[11]=false;
-      
     } else {
       chol[2] = 255;
       Opt[2] = false;
@@ -130,6 +129,11 @@ class escMenu {
       G.Pb.curW4.set(G.level.WorkPower[3]);
       G.Pb.progressRed = 0;
       G.Pb.progressBlue = 0;
+      G.Wp.UpgadeBlocker[0]=0;   
+      G.Wp.UpgadeBlocker[1]=0;   
+      G.Wp.UpgadeBlocker[2]=0;   
+      G.Wp.UpgadeBlocker[3]=0;
+      G.level.time=1;
       es = false;
     }
     //Hvis ESC bliver trykket åbner det menuen og lukker den efter om menuen er åben eller ej
