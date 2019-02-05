@@ -86,13 +86,12 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*1/8, height*2/4, height*1/4, width*1/8);
-      
+
       accepted = false;
       G.Wc.TaskW1 = 0;
       G.Wc.TaskW2 = 0;
       G.Wc.TaskW3 = 0;
       G.Wc.TaskW4 = 0;
-      
     }    
 
     if (P1Select.x == 1 && P1Select.y == 0) {
@@ -381,16 +380,17 @@ class LogikWC {
       t++;
       G.Wp.t = 4;
       action=true;
+      G.Wp.UpgadeBlocker[0]--; 
+      G.Wp.UpgadeBlocker[1]--; 
+      G.Wp.UpgadeBlocker[2]--; 
+      G.Wp.UpgadeBlocker[3]--;
 
       if (t>=G.level.tasknr) {
         println("hej");
         G.Pb.t=1;
         t = 0;
         G.level.time++;
-        G.Wp.UpgadeBlocker[0]--; 
-        G.Wp.UpgadeBlocker[1]--; 
-        G.Wp.UpgadeBlocker[2]--; 
-        G.Wp.UpgadeBlocker[3]--;
+
         G.Wp.progessing = true;
         action1 = true;
         action2 = true;
