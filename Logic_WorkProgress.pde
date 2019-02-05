@@ -145,10 +145,11 @@ class LogikWP {
 
   void upgrade() {
     // her er udregningerne for opgraderingern
-
+     // println(G.level.UpgradePower[upgradenr]);
     if (t >= 4 && t<= 19) {
       t++;
       upgradenr = int(random(5));
+
     }
 
 
@@ -257,7 +258,7 @@ class LogikWP {
 
 
 
-    println(taskW1, taskW2, taskW3, taskW4, work+"hej");
+    //println(taskW1, taskW2, taskW3, taskW4, work+"hej");
     addProgerss();
   }
 }
