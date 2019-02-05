@@ -119,7 +119,7 @@ class Game {
   void run() {
 
     //println(Lg.chol);
-    println(continu);
+  //  println(continu);
 
     skift();//det er en place holder
     switch (loc) {

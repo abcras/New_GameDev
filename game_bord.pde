@@ -1,15 +1,16 @@
 class GameBoard {
 
   PFont f;
-
+  boolean GO = false;
+  int t = 2;
 
 
   void PlayerField() {
-    
+
     //this draws the stuff
     //this is a mess
     //Maybe an array of variables would have been better
-    
+
     f = createFont("arial", 16, true);
 
 
@@ -23,7 +24,7 @@ class GameBoard {
     fill(0, 150, 0);
     stroke(0);
     strokeWeight(2);
-    
+
     //P1 små boxe
     rect(width/8, height/4, width*1/8, height*1/4);//øvereste
     rect(width*1/4, height*2/4, height*1/4, width*1/8);//højre
@@ -40,25 +41,37 @@ class GameBoard {
     fill(222, 0, 222);
     stroke(0);
     strokeWeight(2);
-    textAlign(CENTER);
+
     rect(width*3/8, height*1/4, width*2/8, height*1/4);
     fill(0, 222, 222);
-    textFont(f, 26);
-    text("upgrades", 400, 150);
+    textFont(f, 20);
+    textAlign(CENTER);
+
+    text("Upgrade Effect", width*4/8, 120);
+    text(int(G.level.UpgradePower[G.Wp.upgradenr].x)+" Red", width*4/8, 150);
+    text(int(G.level.UpgradePower[G.Wp.upgradenr].y)+" Blue", width*4/8, 170);
+    text(int(G.level.UpgradePower[G.Wp.upgradenr].z)+" Time", width*4/8, 190);
+    ;
 
     //task box
     fill(222, 0, 222);
-    textAlign(CENTER);
     rect(width*3/8, height*3/4, width*2/8, height*1/4);
     fill(0, 222, 222);
-    textFont(f, 26);
-    text("task", 400, 350);
+    textFont(f, 20);
+    textAlign(CENTER);
+
+
+    text("Task Requirements", 400, 320);
+    if (GO) {
+      text(int(G.Wp.task[G.Wp.tasknr].x)+" Red", width*4/8, 350);
+      text(int(G.Wp.task[G.Wp.tasknr].y)+" Blue", width*4/8, 370);
+    }
     noFill();
     textAlign(LEFT);
   }
   void time() {
     //this function displays the time in the upper right corner of the game board.
-    
+
     f = createFont("arial", 16, true);
     fill(150, 155, 155);
     stroke(0);
@@ -91,5 +104,13 @@ class GameBoard {
   }
   void run() {
     display();
+
+    if (t >= 2 && t < 3 && GO == false) {
+      t++;
+      if (t >= 3) {
+        GO= true;
+        t = 0;
+      }
+    }
   }
 }

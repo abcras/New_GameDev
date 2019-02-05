@@ -386,7 +386,7 @@ class LogikWC {
       G.Wp.UpgadeBlocker[3]--;
 
       if (t>=G.level.tasknr) {
-        println("hej");
+       // println("hej");
         G.Pb.t=1;
         t = 0;
         G.level.time++;
@@ -421,15 +421,12 @@ class LogikWC {
     }
   }
 
-  void pause() {
-  }
-
 
   void run() {
 
     //println(UpgadeW1, UpgadeW2, UpgadeW3, UpgadeW4);
     //println(TaskW1, TaskW2, TaskW3, TaskW4);
-    println(t);
+    //println(t);
     highLight();
 
     if (accept) {

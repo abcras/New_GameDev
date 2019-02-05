@@ -82,7 +82,7 @@ class ProgessBar {
       curW2.set(G.level.WorkPower[1]);
       curW3.set(G.level.WorkPower[2]);
       curW4.set(G.level.WorkPower[3]);
-      println("hej");
+    //  println("hej");
       if (t>=24) {
         GO = true;
         t=0;
@@ -110,7 +110,7 @@ class ProgessBar {
 
 
 
-      println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
+     // println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
       if (int(curW1.x-G.Wp.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.Wp.task[G.Wp.tasknr].y) > 4) {
         curW1 = PVector.sub(proW1, G.Wp.taskW1);
       }
@@ -346,7 +346,7 @@ class ProgessBar {
 
   void run() {
     //println(curW1, curW2, curW3, curW4, progressRed);
-    println(progressRed);
+   // println(progressRed);
     ProgressBarworker();
     ProgressBarscore();
   }
