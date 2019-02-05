@@ -346,7 +346,7 @@ class ProgessBar {
 
   void run() {
     //println(curW1, curW2, curW3, curW4, progressRed);
-    //println(progressRed);
+    println(progressRed);
     ProgressBarworker();
     ProgressBarscore();
   }

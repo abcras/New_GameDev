@@ -112,19 +112,21 @@ class LogikWP {
   void upgradeblock() {
     // her bliver workeren stoppet med at kunne lave arbejegde hvis den er igang med at blive opgradetet
 
-    if (G.Wc.action) {
-      if (G.Wc.UpgadeW1 && UpgadeBlocker[0]==0) { 
-        UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
-      }
-      if ( G.Wc.UpgadeW2 && UpgadeBlocker[0]==0) {
-        UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
-      }
-      if ( G.Wc.UpgadeW3 && UpgadeBlocker[2]==0) { 
-        UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
-      }
-      if ( G.Wc.UpgadeW4 && UpgadeBlocker[3]==0) { 
-        UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
-      } 
+
+    if (G.Wc.UpgadeW1 &&  G.Wc.action && UpgadeBlocker[0]==0) { 
+      UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
+    }
+    if ( G.Wc.UpgadeW2 &&  G.Wc.action && UpgadeBlocker[0]==0) {
+      UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
+    }
+    if ( G.Wc.UpgadeW3 &&  G.Wc.action && UpgadeBlocker[2]==0) { 
+      UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
+      G.Wc.action=false;
+    }
+    if ( G.Wc.UpgadeW4 &&  G.Wc.action && UpgadeBlocker[3]==0) { 
+      UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
       G.Wc.action=false;
     }
     if (UpgadeBlocker[0] < 0) {
@@ -149,24 +151,22 @@ class LogikWP {
       upgradenr = int(random(5));
     }
 
-    if (G.Wc.action) {
-      if (G.Wc.UpgadeW1) { 
 
-        upgradeW1 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-      }
-      if (G.Wc.UpgadeW2) { 
+    if (G.Wc.UpgadeW1 && G.Wc.action) { 
 
-        upgradeW2 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-      }
-      if (G.Wc.UpgadeW3) { 
+      upgradeW1 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+    }
+    if (G.Wc.UpgadeW2 &&  G.Wc.action) { 
 
-        upgradeW3 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-      }
-      if (G.Wc.UpgadeW4) { 
+      upgradeW2 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+    }
+    if (G.Wc.UpgadeW3 &&  G.Wc.action) { 
 
-        upgradeW4 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-      }
-      G.Wc.action=false;
+      upgradeW3 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+    }
+    if (G.Wc.UpgadeW4 &&  G.Wc.action) { 
+
+      upgradeW4 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
     }
   }
 
@@ -255,9 +255,9 @@ class LogikWP {
     task() ;
     //println( G.Pb.curW1.x-task[tasknr].x, task[tasknr].x);
 
-    println(G.Wc.action);
 
-    //println(taskW1, taskW2, taskW3, taskW4, work+"hej");
+
+    println(taskW1, taskW2, taskW3, taskW4, work+"hej");
     addProgerss();
   }
 }
