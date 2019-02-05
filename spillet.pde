@@ -120,7 +120,7 @@ class Game {
 
     //println(Lg.chol);
   //  println(continu);
-
+      level.run();
     skift();//det er en place holder
     switch (loc) {
 
@@ -153,6 +153,7 @@ class Game {
       Gb.run();
       Wc.run(); 
       Wp.run();
+
 
       Ec.run();
       break;

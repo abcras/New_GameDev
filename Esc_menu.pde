@@ -140,6 +140,10 @@ class escMenu {
     if (keys[9] && G.T.es==0) {
       G.T.es=1;
       es = !es;
+      Opt[0] = false;
+      Opt[1] = false;
+      Opt[2] = false;
+      Opt[3] = false;
     } 
     //hvis continue bliver valgt
     if (mousePressed && Opt[0]) {

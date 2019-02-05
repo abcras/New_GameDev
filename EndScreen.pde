@@ -27,6 +27,12 @@ class EndScreen {
     if (G.T.endTimer == 1) {
       //den her kører kun hvis timeren er tændt.
       frames ++;
+      
+     fill(100);
+     textAlign(CENTER);
+     fill(0);
+     textSize(10);
+     text("Exits to main menu in " + int(endTime-(frames/frameRate)), width/2, 0.7*height/4);
     }
     if (endTime <= frames/frameRate) {
       //når der er gået en hvis mængde sekunder specificeret tidligere er timeren færdig.
@@ -47,20 +53,15 @@ class EndScreen {
       scoreProgressRed.add(new Score(1000*random(6)));
       scoreProgressBlue.add(new Score(100*random(20)));
     }
-    //winGame is supposed to be set some other place but it is here for now.
-    winGame = true;
     G.T.endTimer = 1;
     startTimer(5);
-    //the timer is stoppede for now. uncomment to initiate again.
-
-    /*
-    //this don't work right now so no telling about it either
-    fill(100);
+    
+    //Displays that you can continue to the next level if you press ENTER
+     fill(100);
      textAlign(CENTER);
      fill(0);
      textSize(10);
-     text("Press ESC to exit!", 7*width/8, 3.5*height/4);
-     */
+     text("Press ENTER to play next level!", 7*width/8, 3.5*height/4);
 
     if (winGame) {
       //if you win
@@ -126,17 +127,20 @@ class EndScreen {
   void run() {
     //this funnily enough runs the program
     if (keys[10]) {
-      //this part of the program goes back to the menu if the ESC key is pressed
-      //currently does not work
+      //this part of the program goes back to the menu if the ENTER key is pressed
       G.T.endTimer = 0;
-      G.loc = 0;
+      G.loc = 3;
       done = false;
+      scoreProgressRed.clear();
+      scoreProgressBlue.clear();
     }
     //når end screen går i gang starter den timeren ved at sætte G.T.endTimer til 1
     if (done) {
       G.T.endTimer = 0;
       G.loc = 0;
       done = false;
+      scoreProgressRed.clear();
+      scoreProgressBlue.clear();
       //den spørger om timeren er færdig hvis den er så går den til menuen
     } else {
       //den spørger om timeren er færdig hvis den ikke er så tegner den slutskærmen

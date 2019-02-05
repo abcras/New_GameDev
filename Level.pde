@@ -4,10 +4,23 @@ class Level {
   PVector WinScore;
   int time = 1;
   int tasknr;
+  int interations = 2;
+
 
 
 
   void changelevel(int C) {
+
+    if (time >= interations) {
+      if (G.lvlcode < 12) {
+        G.nr++;
+        G.lvlcode++;
+        G.continu = G.lvlcode++;
+        time = 1;
+      } else {
+        G.loc = 5;
+      }
+    }
 
     switch (C) {
     case 0:
@@ -23,14 +36,10 @@ class Level {
       WorkPower[2] = new PVector(100, 100);      
       WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
-      tasknr = 15;
+      tasknr = 1;
+      interations = 3;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=1;
-        time = 0;
-      }
+
 
       break;
 
@@ -42,19 +51,14 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 11;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=2;
-        time = 0;
-      }
       break;
 
     case 2:
@@ -65,19 +69,14 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 12;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=3;
-        time = 0;
-      }
       break;
 
     case 3:
@@ -88,19 +87,14 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 13;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=4;
-        time = 0;
-      }
       break;
 
     case 4:
@@ -111,18 +105,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=5;
-        time = 0;
-      }
+      interations = 14;
+
+
       break;
 
     case 5:
@@ -133,19 +124,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 14;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=6;
-        time = 0;
-      }
+
       break;
 
     case 6:
@@ -156,19 +143,14 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 15;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=7;
-        time = 0;
-      }
       break;
 
     case 7:
@@ -179,19 +161,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 16;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=8;
-        time = 0;
-      }
+
       break;
 
     case 8:
@@ -202,19 +180,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 17;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=9;
-        time = 0;
-      }
+
       break;
 
     case 9:
@@ -225,19 +199,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 18;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=10;
-        time = 0;
-      }
+
       break;
 
     case 10:
@@ -248,19 +218,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 19;
 
-      if (time >= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=11;
-        time = 0;
-      }
+
       break;
 
     case 11:
@@ -271,19 +237,15 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 20;
 
-      if (time <= 30) {
-        G.nr++;
-        G.lvlcode++;
-        G.continu=12;
-        time = 0;
-      }
+
       break;
 
     case 12:
@@ -294,21 +256,33 @@ class Level {
       UpgradePower[2] = new PVector(10, 0, 5) ;      
       UpgradePower[3] = new PVector(0, 10, 5) ;      
       UpgradePower[4] = new PVector(20, 20, 2) ;
-      WorkPower[0].set(G.Pb.proW1);      
-      WorkPower[1].set(G.Pb.proW2);     
-      WorkPower[2].set(G.Pb.proW3);     
-      WorkPower[3].set(G.Pb.proW4);
+      WorkPower[0] = new PVector(200, 150);      
+      WorkPower[1] = new PVector(100, 100);      
+      WorkPower[2] = new PVector(100, 100);      
+      WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
       tasknr = 15;
+      interations = 21;
 
-      if (time >= 30) {
-        G.loc=5;
-      }
       break;
+    }
+  }
+
+  void win() {
+    if (time >= interations) {
+      if (WinScore.x <= G.Pb.progressRed || WinScore.y <= G.Pb.progressBlue ) {
+        G.ES.winGame = true;
+        G.loc = 5;
+      }
+      if (WinScore.x >= G.Pb.progressRed || WinScore.y >= G.Pb.progressBlue ) {
+        G.ES.winGame = false;
+        G.loc = 5;
+      }
     }
   }
 
 
   void run() {
+    win();
   }
 }

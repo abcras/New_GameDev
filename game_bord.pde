@@ -81,7 +81,7 @@ class GameBoard {
     textAlign(CENTER);
     textFont(f, 16);
     textLeading(20);
-    text("Time"+"\n"+30, 780, 20);
+    text("Time"+"\n"+G.level.interations, 780, 20);
     noFill();
 
     fill(150, 155, 155);
