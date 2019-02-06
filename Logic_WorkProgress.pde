@@ -150,7 +150,7 @@ class LogikWP {
 
 
     if (t>=1 && t<= 24 && GO == false) {
-      println("hej");
+      //println("hej");
       t++;
       if (t>=24) {
         tasknr = int(random(10));

@@ -84,7 +84,7 @@ class Menu {
       screen[1] = false;
     }
     if (mouseX>=0 && mouseX<=80 && mouseY>=390 && mouseY<=height && t >= 10) {
-      G.nr=12;
+      G.nr=13;
     }
   }
 
@@ -143,5 +143,6 @@ class Menu {
     textAlign(CENTER);
     text("This is a two player game", width/2, (height/2)-100);
     textAlign(LEFT);
+
   }
 }

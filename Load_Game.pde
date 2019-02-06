@@ -1,8 +1,8 @@
 
 class LoadGame {
   PFont f; 
-  boolean[] LVL = new boolean[12];
-  int[] chol = new int[12];
+  boolean[] LVL = new boolean[13];
+  int[] chol = new int[13];
   int levelCode;
   int lea;
   boolean leave;
@@ -183,8 +183,11 @@ class LoadGame {
     textAlign(LEFT);
   }
 
-  void bordlogic() {    
 
+  void bordlogic() {    
+    if (t<30) {
+      t++;
+    }
     //You can chose the level that you want to play.
 
     if (mouseX >= width*2/16 && mouseX <= width*5/16 && mouseY >= height*1/8 && mouseY <= height*3/8) {
@@ -287,7 +290,8 @@ class LoadGame {
     if (G.nr >= 11) { 
       if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >= height*5/8 && mouseY <= height*7/8 && t >= 30) {
         chol[11] = 0;
-        LVL[11] = true;
+        LVL[11] = true;  
+        println("hej");
       } else {
         chol[11] = 255;
         LVL[11] = false;
@@ -322,7 +326,7 @@ class LoadGame {
   }
 
   void run() { 
- 
+  
     leave();
     bord();
     bordlogic();
