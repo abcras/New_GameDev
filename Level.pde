@@ -36,7 +36,7 @@ class Level {
       WorkPower[2] = new PVector(100, 100);      
       WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
-      tasknr = 1;
+      tasknr = 2;
       interations = 3;
 
 
@@ -56,7 +56,7 @@ class Level {
       WorkPower[2] = new PVector(100, 100);      
       WorkPower[3] = new PVector(100, 100);
       WinScore = new PVector(3000, 3000);
-      tasknr = 15;
+      tasknr = 5;
       interations = 11;
 
       break;

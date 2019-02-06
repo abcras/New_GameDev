@@ -1,6 +1,6 @@
 class LogikWP {
 
-  int t;
+  int t=1;
   boolean work = false;
   boolean progessing = false;
   boolean GO = false;
@@ -31,22 +31,7 @@ class LogikWP {
 
     //her bliver tasks lavet og udregnt indiveduelt for hver worker
 
-    if (t >= 4 && t<= 19) {
-      t++;
-      tasknr = int(random(10));
-    }
-    //if (G.Wc.TaskW1 == 1 && firstW1) {
-    //  G.Pb.curW1.set(G.level.WorkPower[0]);
-    //}
-    //if (G.Wc.TaskW2 == 1 && firstW2) {
-    //  G.Pb.curW2.set(G.level.WorkPower[1]);
-    //}
-    //if (G.Wc.TaskW3 == 1 && firstW3) {
-    //  G.Pb.curW3.set(G.level.WorkPower[2]);
-    //}
-    //if (G.Wc.TaskW4 == 1 && firstW4) {
-    //  G.Pb.curW4.set(G.level.WorkPower[3]);
-    //}
+
 
     task[0] = new PVector(10, 5);
     task[1] = new PVector(5, 10);
@@ -68,11 +53,6 @@ class LogikWP {
 
         //println("hej");
       }
-      //if (G.Wc.TaskW1 == 1 && work && firstW1 == false) { 
-      //  work = !work;
-      //  G.Wc.TaskW1 = 0;
-      //  taskW1.add(task[0]); 
-      //} 
 
 
 
@@ -80,11 +60,7 @@ class LogikWP {
         taskW2 = PVector.add(taskW2, task[tasknr]);     
         G.Wc.TaskW2 = 0;
       }
-      //if (G.Wc.TaskW2 == 1 && work && firstW2 == false) { 
-      //  work = !work;
-      //  G.Wc.TaskW2 = 0;
-      //  G.Pb.curW2.sub(task[0]);
-      //}
+
 
 
 
@@ -92,11 +68,7 @@ class LogikWP {
         taskW3 = PVector.add(taskW3, task[tasknr]);   
         G.Wc.TaskW3 = 0;
       }
-      //if (G.Wc.TaskW3 == 1 && work && firstW3 == false) { 
-      //  work = !work;
-      //  G.Wc.TaskW3 = 0;
-      //  G.Pb.curW3.sub(task[0]);
-      //}
+
 
 
 
@@ -106,68 +78,70 @@ class LogikWP {
       }
       work = false;
     }
+    if (t >= 4 && t<= 19) {
+      t++;
+      tasknr = int(random(10));
+    }
   }
 
 
   void upgradeblock() {
     // her bliver workeren stoppet med at kunne lave arbejegde hvis den er igang med at blive opgradetet
 
-
-    if (G.Wc.UpgadeW1 &&  G.Wc.action && UpgadeBlocker[0]==0) { 
-      UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
+    if (G.Wc.action) {
+      if (G.Wc.UpgadeW1 &&  G.Wc.action && UpgadeBlocker[0]==0) { 
+        UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
+      }
+      if ( G.Wc.UpgadeW2 &&  G.Wc.action && UpgadeBlocker[0]==0) {
+        UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
+      }
+      if ( G.Wc.UpgadeW3 &&  G.Wc.action && UpgadeBlocker[2]==0) { 
+        UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
+      }
+      if ( G.Wc.UpgadeW4 &&  G.Wc.action && UpgadeBlocker[3]==0) { 
+        UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
+      }
+      if (UpgadeBlocker[0] < 0) {
+        UpgadeBlocker[0] = 0;
+      }
+      if (UpgadeBlocker[1] < 0 ) {
+        UpgadeBlocker[1] = 0;
+      }
+      if (UpgadeBlocker[2] < 0) {
+        UpgadeBlocker[2] = 0;
+      }
+      if (UpgadeBlocker[3] < 0) {
+        UpgadeBlocker[3] = 0;
+      }  
       G.Wc.action=false;
-    }
-    if ( G.Wc.UpgadeW2 &&  G.Wc.action && UpgadeBlocker[0]==0) {
-      UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
-      G.Wc.action=false;
-    }
-    if ( G.Wc.UpgadeW3 &&  G.Wc.action && UpgadeBlocker[2]==0) { 
-      UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
-      G.Wc.action=false;
-    }
-    if ( G.Wc.UpgadeW4 &&  G.Wc.action && UpgadeBlocker[3]==0) { 
-      UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
-      G.Wc.action=false;
-    }
-    if (UpgadeBlocker[0] < 0) {
-      UpgadeBlocker[0] = 0;
-    }
-    if (UpgadeBlocker[1] < 0 ) {
-      UpgadeBlocker[1] = 0;
-    }
-    if (UpgadeBlocker[2] < 0) {
-      UpgadeBlocker[2] = 0;
-    }
-    if (UpgadeBlocker[3] < 0) {
-      UpgadeBlocker[3] = 0;
     }
   }
 
   void upgrade() {
     // her er udregningerne for opgraderingern
-     // println(G.level.UpgradePower[upgradenr]);
+    // println(G.level.UpgradePower[upgradenr]);
+    if (G.Wc.action) {
+      if (G.Wc.UpgadeW1) { 
+
+        upgradeW1 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+      }
+      if (G.Wc.UpgadeW2 &&  G.Wc.action) { 
+
+        upgradeW2 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+      }
+      if (G.Wc.UpgadeW3 &&  G.Wc.action) { 
+
+        upgradeW3 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+      }
+      if (G.Wc.UpgadeW4 &&  G.Wc.action) { 
+
+        upgradeW4 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
+      }
+      G.Wc.action=false;
+    }
     if (t >= 4 && t<= 19) {
       t++;
       upgradenr = int(random(5));
-
-    }
-
-
-    if (G.Wc.UpgadeW1 && G.Wc.action) { 
-
-      upgradeW1 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-    }
-    if (G.Wc.UpgadeW2 &&  G.Wc.action) { 
-
-      upgradeW2 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-    }
-    if (G.Wc.UpgadeW3 &&  G.Wc.action) { 
-
-      upgradeW3 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
-    }
-    if (G.Wc.UpgadeW4 &&  G.Wc.action) { 
-
-      upgradeW4 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
     }
   }
 
@@ -175,13 +149,16 @@ class LogikWP {
     //her bliver alt arbejdet worken har lavet udreget og lagt sammen
 
 
-    if (t>5 && t< 25 && GO == false) {
+    if (t>=1 && t<= 24 && GO == false) {
+      println("hej");
       t++;
       if (t>=24) {
+        tasknr = int(random(10));
         GO = true;
         t=0;
       }
-    } 
+    }
+
     if (GO) {
       if (UpgadeBlocker[0] <= 0) {
         DayProgressR[0]=G.Pb.proW1.x-G.Pb.curW1.x;
@@ -225,6 +202,7 @@ class LogikWP {
     }
 
 
+
     if (G.Wc.action1 && G.Wc.action2) {
 
 
@@ -251,7 +229,7 @@ class LogikWP {
     //println(G.Wc.TaskW1, G.Wc.TaskW2, G.Wc.TaskW3, G.Wc.TaskW4, work, firstW2, G.Pb.curW2, G.Pb.curW3, G.Pb.curW4, UpgadeBloker[0]);
     //println(DayProgressR[4], DayProgressR[0]);
     //println(G.Wc.TaskW1, work, UpgadeBlocker[0], G.Wc.UpgadeW1, G.Wc.action1);
-
+    println(G.level.WorkPower[0], G.Pb.curW1, GO);
     //println(G.Wc.TaskW1, G.Wc.TaskW2, G.Wc.TaskW3, G.Wc.TaskW4);
     task() ;
     //println( G.Pb.curW1.x-task[tasknr].x, task[tasknr].x);

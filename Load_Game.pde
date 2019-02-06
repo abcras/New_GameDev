@@ -322,7 +322,7 @@ class LoadGame {
   }
 
   void run() { 
-
+ 
     leave();
     bord();
     bordlogic();
