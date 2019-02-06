@@ -50,7 +50,7 @@ class GameBoard {
     text("Upgrade Effect", width*4/8, 120);
     text(int(G.level.UpgradePower[G.Wp.upgradenr].x)+" Red", width*4/8, 150);
     text(int(G.level.UpgradePower[G.Wp.upgradenr].y)+" Blue", width*4/8, 170);
-    text(int(G.level.UpgradePower[G.Wp.upgradenr].z)+" Time", width*4/8, 190);
+    text(int(G.level.UpgradePower[G.Wp.upgradenr].z)+" Tasks", width*4/8, 190);
 
 
     fill(222, 222, 0);
