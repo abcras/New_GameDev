@@ -1,4 +1,4 @@
-class Level {
+ class Level {
   PVector[] UpgradePower = new PVector[5];
   PVector[] WorkPower= new PVector[4];
   PVector WinScore;

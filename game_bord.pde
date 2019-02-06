@@ -51,7 +51,20 @@ class GameBoard {
     text(int(G.level.UpgradePower[G.Wp.upgradenr].x)+" Red", width*4/8, 150);
     text(int(G.level.UpgradePower[G.Wp.upgradenr].y)+" Blue", width*4/8, 170);
     text(int(G.level.UpgradePower[G.Wp.upgradenr].z)+" Time", width*4/8, 190);
-    ;
+
+
+    fill(222, 222, 0);
+    stroke(0);
+    strokeWeight(2);
+
+    rect(width*3/8, height*2/4, width*2/8, height*1/4);
+    fill(255, 0, 255);
+    textFont(f, 20);
+    textAlign(CENTER);
+    text("Task", width*4/8, 220);
+    if (GO) {
+      text(int(G.Wc.t)+"/"+int(G.level.tasknr), width*4/8, 250);
+    }
 
     //task box
     fill(222, 0, 222);
