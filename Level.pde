@@ -12,10 +12,22 @@
   void changelevel(int C) {
 
     if (time >= interations) {
+          G.Pb.curW1=(G.level.WorkPower[0]);
+      G.Pb.curW2.set(G.level.WorkPower[1]);
+      G.Pb.curW3.set(G.level.WorkPower[2]);
+      G.Pb.curW4.set(G.level.WorkPower[3]);
+    
+
+      G.Pb.progressRed = 0;
+      G.Pb.progressBlue = 0;
+      G.Wp.UpgadeBlocker[0]=0;   
+      G.Wp.UpgadeBlocker[1]=0;   
+      G.Wp.UpgadeBlocker[2]=0;   
+      G.Wp.UpgadeBlocker[3]=0;
       if (G.lvlcode < 12) {
         G.nr++;
-        G.lvlcode++;
-        G.continu = G.lvlcode++;
+        G.lvlcode=G.lvlcode+1;
+        G.continu = G.lvlcode+1;
         time = 1;
       } else {
         G.loc = 5;

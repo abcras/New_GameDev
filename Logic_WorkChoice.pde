@@ -8,7 +8,7 @@ class LogikWC {
   boolean accepted2 = false;
   boolean action = false; 
   boolean action1 = false; 
-  boolean action2 = false;
+
   PVector P1Select = new PVector(0, 0);
   PVector P2Select = new PVector(0, 0);
   int acceptP1 = 0;
@@ -374,7 +374,7 @@ class LogikWC {
       P2Select = new PVector(0, 0);
       G.T.St = 1;
       acceptP2 = 0;
-      acceptP1 = 0; 
+      acceptP1 = 0;
 
       G.Wp.work = true;
       t++;
@@ -386,14 +386,12 @@ class LogikWC {
       G.Wp.UpgadeBlocker[3]--;
 
       if (t>=G.level.tasknr) {
-       // println("hej");
-        G.Pb.t=1;
-        t = 0;
-        G.level.time++;
 
         G.Wp.progessing = true;
-        action1 = true;
-        action2 = true;
+        G.level.time++;
+        G.Pb.t=1;
+
+        t = 0;
       }
     }
 

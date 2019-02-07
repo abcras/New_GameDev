@@ -113,6 +113,7 @@ class ProgessBar {
       // println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
       if (int(curW1.x-G.Wp.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.Wp.task[G.Wp.tasknr].y) > 4) {
         curW1 = PVector.sub(proW1, G.Wp.taskW1);
+        
       }
       if (int(curW2.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.Wp.task[G.Wp.tasknr].y) > 0) {    
         curW2 = PVector.sub(proW2, G.Wp.taskW2);
@@ -128,7 +129,7 @@ class ProgessBar {
 
     if (t >= 1) {
       t++; 
-      if (t <= 5) {
+      if (t <= 5 && G.Wp.progessing == false) {
         G.Wp.taskW1.set(0, 0);
         G.Wp.taskW2.set(0, 0);
         G.Wp.taskW3.set(0, 0);

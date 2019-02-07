@@ -190,53 +190,43 @@ class LogikWP {
       }
 
 
-
       if (progessing) {
         t++;
-        DayProgressR[4]=DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3];
-        DayProgressB[4]=DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3];
-        if (t >= 3) {
-          progessing = false;
-        }
+        DayProgressR[4]=DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]+task[tasknr].x;
+        DayProgressB[4]=DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]+task[tasknr].y;
+
+
+        G.Wc.action1 =true;
+        progessing = false;
       }
     }
 
 
 
-    if (G.Wc.action1 && G.Wc.action2) {
+
+    if (G.Wc.action1) {
 
 
-
-      G.Pb.progressRed += DayProgressR[4];
+      G.Pb.progressRed = G.Pb.progressRed+int(DayProgressR[4]);
       G.Pb.progressBlue += DayProgressB[4];
 
       G.ES.scoreProgressRed.add(new Score(G.Pb.progressRed));
       G.ES.scoreProgressBlue.add(new Score(G.Pb.progressBlue));
 
+
+
       G.Wc.action1 = false;
-      G.Wc.action2 = false;
     }
   }
 
 
   void run() {   
+    addProgerss();
     upgrade();
     upgradeblock();
 
-    //println(DayProgressR[0], DayProgressB[0], UpgadeBloker[0], G.Pb.proP1W1.y, G.Pb.curW1.y);
-    //println(taskW1, G.Wc.UpgadeW1, , upgradeW1RB); 
-    //println(G.Wc.TaskW1, work, first, G.Pb.curW1, taskW1, curW1);
-    //println(G.Wc.TaskW1, G.Wc.TaskW2, G.Wc.TaskW3, G.Wc.TaskW4, work, firstW2, G.Pb.curW2, G.Pb.curW3, G.Pb.curW4, UpgadeBloker[0]);
-    //println(DayProgressR[4], DayProgressR[0]);
-    //println(G.Wc.TaskW1, work, UpgadeBlocker[0], G.Wc.UpgadeW1, G.Wc.action1);
-    println(G.level.WorkPower[0], G.Pb.curW1, GO);
-    //println(G.Wc.TaskW1, G.Wc.TaskW2, G.Wc.TaskW3, G.Wc.TaskW4);
+ 
     task() ;
-    //println( G.Pb.curW1.x-task[tasknr].x, task[tasknr].x);
-
-
-
-    //println(taskW1, taskW2, taskW3, taskW4, work+"hej");
-    addProgerss();
+    
   }
 }
