@@ -62,7 +62,7 @@ class GameBoard {
     text("Trash"+"\n"+"can", width*22/32, height*11/32);
     text("P1", width*3/16, height*5/8);
     text("P2", width*13/16, height*5/8);
-    
+
     //upgrade box
     fill(222, 0, 222);
     stroke(0);
@@ -76,7 +76,7 @@ class GameBoard {
     text("Upgrade Effect", width*4/8, 120);
     text(int(G.level.UpgradePower[G.Wp.upgradenr].x)+" Red", width*4/8, 150);
     text(int(G.level.UpgradePower[G.Wp.upgradenr].y)+" Blue", width*4/8, 170);
-    text(int(G.level.UpgradePower[G.Wp.upgradenr].z)+" Tasks", width*4/8, 190);
+    text(int(G.level.UpgradePower[G.Wp.upgradenr].z)+" Action(s)", width*4/8, 190);
 
 
     fill(222, 222, 0);
@@ -150,6 +150,7 @@ class GameBoard {
         GO= true;
         t = 0;
       }
-    }
+    }    
+   
   }
 }

@@ -27,12 +27,12 @@ class EndScreen {
     if (G.T.endTimer == 1) {
       //den her kører kun hvis timeren er tændt.
       frames ++;
-      
-     fill(100);
-     textAlign(CENTER);
-     fill(0);
-     textSize(10);
-     text("Exits to main menu in " + int(endTime-(frames/frameRate)), width/2, 0.7*height/4);
+
+      fill(100);
+      textAlign(CENTER);
+      fill(0);
+      textSize(10);
+      text("Exits to main menu in " + int(endTime-(frames/frameRate)), width/2, 0.7*height/4);
     }
     if (endTime <= frames/frameRate) {
       //når der er gået en hvis mængde sekunder specificeret tidligere er timeren færdig.
@@ -55,13 +55,13 @@ class EndScreen {
     }
     G.T.endTimer = 1;
     startTimer(5);
-    
+
     //Displays that you can continue to the next level if you press ENTER
-     fill(100);
-     textAlign(CENTER);
-     fill(0);
-     textSize(10);
-     text("Press ENTER to play next level!", 7*width/8, 3.5*height/4);
+    fill(100);
+    textAlign(CENTER);
+    fill(0);
+    textSize(10);
+    text("Press ENTER to play next level!", 7*width/8, 3.5*height/4);
 
     if (winGame) {
       //if you win
@@ -146,5 +146,6 @@ class EndScreen {
       //den spørger om timeren er færdig hvis den ikke er så tegner den slutskærmen
       ShowEndScreen();
     }
+    saveFrame("hej.png");
   }
 }
