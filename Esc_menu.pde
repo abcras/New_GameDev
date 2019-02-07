@@ -124,7 +124,7 @@ class escMenu {
 
   void run() {
     if (mousePressed && Opt[1]) {
-      G.Pb.curW1=(G.level.WorkPower[0]);
+      G.Pb.curW1.set(G.level.WorkPower[0]);
       G.Pb.curW2.set(G.level.WorkPower[1]);
       G.Pb.curW3.set(G.level.WorkPower[2]);
       G.Pb.curW4.set(G.level.WorkPower[3]);

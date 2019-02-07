@@ -397,13 +397,11 @@ class LogikWC {
       G.Wp.UpgadeBlocker[3]--;
 
       if (t>=G.level.tasknr) {
-<<<<<<< HEAD
+
         // println("hej");
         G.Pb.t=1;
         t = 0;
         G.level.time++;
-=======
->>>>>>> fdb025ed0672fc44ab83859b3b418f881af37a03
 
         G.Wp.progessing = true;
         G.level.time++;

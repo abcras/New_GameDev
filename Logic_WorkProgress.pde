@@ -80,31 +80,35 @@ class LogikWP {
     // her bliver workeren stoppet med at kunne lave arbejegde hvis den er igang med at blive opgradetet
 
     if (G.Wc.action) {
-      if (G.Wc.UpgadeW1 &&  G.Wc.action && UpgadeBlocker[0]==0) { 
+      if (G.Wc.UpgadeW1  && UpgadeBlocker[0]<=0) { 
         UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
       }
-      if ( G.Wc.UpgadeW2 &&  G.Wc.action && UpgadeBlocker[0]==0) {
-        UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
+      if ( G.Wc.UpgadeW2 &&  UpgadeBlocker[0]==0) {
+        UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);  
+      
       }
-      if ( G.Wc.UpgadeW3 &&  G.Wc.action && UpgadeBlocker[2]==0) { 
-        UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
+      if ( G.Wc.UpgadeW3 &&   UpgadeBlocker[2]==0) { 
+        UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);  
+      
       }
-      if ( G.Wc.UpgadeW4 &&  G.Wc.action && UpgadeBlocker[3]==0) { 
-        UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
-      }
-      if (UpgadeBlocker[0] < 0) {
-        UpgadeBlocker[0] = 0;
-      }
-      if (UpgadeBlocker[1] < 0 ) {
-        UpgadeBlocker[1] = 0;
-      }
-      if (UpgadeBlocker[2] < 0) {
-        UpgadeBlocker[2] = 0;
-      }
-      if (UpgadeBlocker[3] < 0) {
-        UpgadeBlocker[3] = 0;
+      if ( G.Wc.UpgadeW4 && UpgadeBlocker[3]==0) { 
+        UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);  
+       
       }  
       G.Wc.action=false;
+    }  
+
+    if (UpgadeBlocker[0] < 0) {
+      UpgadeBlocker[0] = 0;
+    }
+    if (UpgadeBlocker[1] < 0 ) {
+      UpgadeBlocker[1] = 0;
+    }
+    if (UpgadeBlocker[2] < 0) {
+      UpgadeBlocker[2] = 0;
+    }
+    if (UpgadeBlocker[3] < 0) {
+      UpgadeBlocker[3] = 0;
     }
   }
 
@@ -128,7 +132,6 @@ class LogikWP {
 
         upgradeW4 = new PVector(G.level.UpgradePower[upgradenr].x, G.level.UpgradePower[upgradenr].y);
       }
-      G.Wc.action=false;
     }
     if (t >= 4 && t<= 19) {
       t++;
@@ -212,12 +215,11 @@ class LogikWP {
 
 
   void run() {   
-    addProgerss();
+
     upgrade();
     upgradeblock();
-
- 
+    addProgerss();
+  
     task() ;
-    
   }
 }
