@@ -48,11 +48,13 @@ class EndScreen {
       scoreProgressRed.add(new Score(0));
       scoreProgressBlue.add(new Score(0));
     }
+    /*
     if (scoreProgressRed.size() < 50) {
       //le test.
       scoreProgressRed.add(new Score(1000*random(6)));
       scoreProgressBlue.add(new Score(100*random(20)));
     }
+    */
     G.T.endTimer = 1;
     startTimer(5);
 
