@@ -18,10 +18,10 @@ class ProgessBar {
   PVector proRP2U2;
   PVector proRP2U3;
   PVector proRP2U4;
-  PVector proW1;
-  PVector proW2;
-  PVector proW3;
-  PVector proW4;
+  PVector proW1= new PVector(0, 0);
+  PVector proW2= new PVector(0, 0);
+  PVector proW3= new PVector(0, 0);
+  PVector proW4= new PVector(0, 0);
   PVector curW1 = new PVector(0, 0);
   PVector curW2 = new PVector(0, 0);
   PVector curW3 = new PVector(0, 0);
@@ -81,7 +81,11 @@ class ProgessBar {
       curW1.set(G.level.WorkPower[0]);
       curW2.set(G.level.WorkPower[1]);
       curW3.set(G.level.WorkPower[2]);
-      curW4.set(G.level.WorkPower[3]);
+      curW4.set(G.level.WorkPower[3]); 
+      proW1.set(G.level.WorkPower[0]);
+      proW2.set(G.level.WorkPower[1]);
+      proW3.set(G.level.WorkPower[2]);
+      proW4.set(G.level.WorkPower[3]);
       //  println("hej");
       if (t>=24) {
         GO = true;
@@ -113,7 +117,6 @@ class ProgessBar {
       // println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
       if (int(curW1.x-G.level.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.level.task[G.Wp.tasknr].y) > 4) {
         curW1 = PVector.sub(proW1, G.Wp.taskW1);
-        
       }
       if (int(curW2.x-G.level.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.level.task[G.Wp.tasknr].y) > 0) {    
         curW2 = PVector.sub(proW2, G.Wp.taskW2);
@@ -129,7 +132,7 @@ class ProgessBar {
 
     if (t >= 1) {
       t++; 
-      if (t <= 5 && G.Wp.progessing == false) {
+      if (t <= 5) {
         G.Wp.taskW1.set(0, 0);
         G.Wp.taskW2.set(0, 0);
         G.Wp.taskW3.set(0, 0);
@@ -243,16 +246,15 @@ class ProgessBar {
         textFont(f, 13);
         text(curW4.x + " - " + G.level.task[G.Wp.tasknr].x +" Red", 13, 78);
         text(curW4.y + " - " + G.level.task[G.Wp.tasknr].y +" Blue", 13, 94);
-         
-         
       }
 
 
 
 
       //this is the player 2 part of the equation so to speak
+      textAlign(LEFT);
+      if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {  
 
-      if (G.Wc.P2Select.x == -1 && G.Wc.P2Select.y == 0) {
         float mproRP2W1 = constrain(map(curW1.x, 0, proW1.x, 0, width*3/8-20), 0, width*3/8-20);
         float mproBP2W1 = constrain(map(curW1.y, 0, proW1.y, 0, width*3/8-20), 0, width*3/8-20);
 
@@ -349,7 +351,7 @@ class ProgessBar {
 
   void run() {
     //println(curW1, curW2, curW3, curW4, progressRed);
-    // println(progressRed);
+
     ProgressBarworker();
     ProgressBarscore();
   }
