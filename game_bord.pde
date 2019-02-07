@@ -61,7 +61,7 @@ class GameBoard {
     fill(255, 0, 255);
     textFont(f, 20);
     textAlign(CENTER);
-    text("Task", width*4/8, 220);
+    text("Action", width*4/8, 220);
     if (GO) {
       text(int(G.Wc.t)+"/"+int(G.level.tasknr), width*4/8, 250);
     }

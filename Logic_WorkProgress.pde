@@ -183,8 +183,8 @@ class LogikWP {
 
       if (progessing) {
         t++;
-        DayProgressR[4]=DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]+task[tasknr].x;
-        DayProgressB[4]=DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]+task[tasknr].y;
+        DayProgressR[4]=DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]+G.level.task[tasknr].x;
+        DayProgressB[4]=DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]+G.level.task[tasknr].y;
 
 
         G.Wc.action1 =true;
@@ -198,7 +198,7 @@ class LogikWP {
     if (G.Wc.action1) {
 
 
-      G.Pb.progressRed = G.Pb.progressRed+int(DayProgressR[4]);
+      G.Pb.progressRed += DayProgressR[4];
       G.Pb.progressBlue += DayProgressB[4];
 
       G.ES.scoreProgressRed.add(new Score(G.Pb.progressRed));
