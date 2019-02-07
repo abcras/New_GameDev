@@ -164,8 +164,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW1.x+" Red", 13, 78);
-        text(curW1.y+" Blue", 13, 94);
+        text(curW1.x + " - " + G.level.task[G.Wp.tasknr].x +" Red", 13, 78);
+        text(curW1.y + " - " + G.level.task[G.Wp.tasknr].y +" Blue", 13, 94);
       }
       if (G.Wc.P1Select.x == 0 && G.Wc.P1Select.y == 1) {
 
@@ -189,8 +189,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW2.x+" Red", 13, 78);
-        text(curW2.y+" Blue", 13, 94);
+        text(curW2.x + " - " + G.level.task[G.Wp.tasknr].x +" Red", 13, 78);
+        text(curW2.y + " - " + G.level.task[G.Wp.tasknr].y +" Blue", 13, 94);
       }
       if (G.Wc.P1Select.x == 1 && G.Wc.P1Select.y == 0) {
 
@@ -214,8 +214,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW3.x+" Red", 13, 78);
-        text(curW3.y+" Blue", 13, 94);
+        text(curW3.x + " - " + G.level.task[G.Wp.tasknr].x +" Red", 13, 78);
+        text(curW3.y + " - " + G.level.task[G.Wp.tasknr].y +" Blue", 13, 94);
       }
       if (G.Wc.P1Select.x == 0 && G.Wc.P1Select.y == -1) {
 
@@ -240,8 +240,10 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW4.x+" Red", 13, 78);
-        text(curW4.y+" Blue", 13, 94);
+        text(curW4.x + " - " + G.level.task[G.Wp.tasknr].x +" Red", 13, 78);
+        text(curW4.y + " - " + G.level.task[G.Wp.tasknr].y +" Blue", 13, 94);
+         
+         
       }
 
 
@@ -268,8 +270,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW1.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(curW1.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW1.x + " + " + G.level.UpgradePower[G.Wp.upgradenr].x +" Red", width*5/8+13, 78);
+        text(curW1.y + " + " + G.level.UpgradePower[G.Wp.upgradenr].y +" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == 1) {   
@@ -291,8 +293,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW2.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(curW2.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW2.x + " + " + G.level.UpgradePower[G.Wp.upgradenr].x +" Red", width*5/8+13, 78);
+        text(curW2.y + " + " + G.level.UpgradePower[G.Wp.upgradenr].y +" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 1 && G.Wc.P2Select.y == 0) {
@@ -314,8 +316,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW3.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(curW3.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW3.x + " + " + G.level.UpgradePower[G.Wp.upgradenr].x +" Red", width*5/8+13, 78);
+        text(curW3.y + " + " + G.level.UpgradePower[G.Wp.upgradenr].y +" Blue", width*5/8+13, 94);
       }
 
       if (G.Wc.P2Select.x == 0 && G.Wc.P2Select.y == -1) {
@@ -338,8 +340,8 @@ class ProgessBar {
 
         fill(255);
         textFont(f, 13);
-        text(curW4.x+/*+" + " + CurrentUpgrade.x*/" Red", width*5/8+13, 78);
-        text(curW4.y+/*+" + " + CurrentUpgrade.y*/" Blue", width*5/8+13, 94);
+        text(curW4.x + " + " + G.level.UpgradePower[G.Wp.upgradenr].x +" Red", width*5/8+13, 78);
+        text(curW4.y + " + " + G.level.UpgradePower[G.Wp.upgradenr].y +" Blue", width*5/8+13, 94);
       }
     }
   }

@@ -184,7 +184,7 @@ class LoadGame {
   }
 
 
-  void bordlogic() {    
+  void bordLogic() {    
     if (t<30) {
       t++;
     }
@@ -329,6 +329,6 @@ class LoadGame {
   
     leave();
     bord();
-    bordlogic();
+    bordLogic();
   }
 }

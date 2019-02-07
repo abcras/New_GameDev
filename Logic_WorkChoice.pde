@@ -87,6 +87,11 @@ class LogikWC {
       strokeWeight(2);
       rect(width*1/8, height*2/4, height*1/4, width*1/8);
 
+      fill(0);
+      textAlign(CENTER);
+      textSize(25);
+      text("P1", width*3/16, height*5/8);
+
       accepted = false;
       G.Wc.TaskW1 = 0;
       G.Wc.TaskW2 = 0;
@@ -195,6 +200,12 @@ class LogikWC {
       stroke(random(170, 250));
       strokeWeight(2);
       rect(width*6/8, height*2/4, height*1/4, width*1/8);
+
+      fill(0);
+      textAlign(CENTER);
+      textSize(25);
+      text("P2", width*13/16, height*5/8);
+
       accepted = false;
       UpgadeW1 = false;
       UpgadeW2 = false;
@@ -291,7 +302,7 @@ class LogikWC {
     textAlign(LEFT);
   }
 
-  void choseP1() {
+  void chooseP1() {
 
     //this is the code that changes where player 1 is acting
 
@@ -327,7 +338,7 @@ class LogikWC {
     }
   }
 
-  void choseP2() {
+  void chooseP2() {
 
     //this changes where player 2 is acting
 
@@ -386,7 +397,7 @@ class LogikWC {
       G.Wp.UpgadeBlocker[3]--;
 
       if (t>=G.level.tasknr) {
-       // println("hej");
+        // println("hej");
         G.Pb.t=1;
         t = 0;
         G.level.time++;
@@ -433,8 +444,8 @@ class LogikWC {
       accept();
       acceptHighLight();
     } else { 
-      choseP1();
-      choseP2();
+      chooseP1();
+      chooseP2();
     }
   }
 }
