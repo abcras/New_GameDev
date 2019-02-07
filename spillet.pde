@@ -119,8 +119,8 @@ class Game {
   void run() {
 
     //println(Lg.chol);
-  //  println(continu);
-      level.run();
+    //  println(continu);
+    level.run();
     skift();
     switch (loc) {
 
@@ -149,10 +149,12 @@ class Game {
     case 3:
       //this is the main game
       T.run();
-      Pb.run();
-      Gb.run();
-      Wc.run(); 
+      Pb.run(); 
+      Gb.run();  
       Wp.run();
+      Wc.run(); 
+
+
 
 
       Ec.run();

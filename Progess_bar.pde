@@ -9,6 +9,8 @@ class ProgessBar {
   int progressBlue = 0;
 
 
+  int AprogressRed = 0;
+  int AprogressBlue = 0;
 
 
   int t =6;
@@ -27,6 +29,7 @@ class ProgessBar {
   PVector curW3 = new PVector(0, 0);
   PVector curW4 = new PVector(0, 0);
 
+
   ProgessBar() {
   }
 
@@ -44,8 +47,8 @@ class ProgessBar {
     //progressBlue = 0;
 
 
-    float mproR = constrain(map(progressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
-    float mproB = constrain(map(progressBlue, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
+    float mproR = constrain(map(AprogressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
+    float mproB = constrain(map(AprogressBlue, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
 
 
     fill(0);
@@ -66,6 +69,18 @@ class ProgessBar {
     textFont(f, 13);
     text(progressRed+" Red", 53, 23);
     text(progressBlue+" Blue", 53, 39);
+
+
+
+    float mAproR = constrain(map(AprogressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
+    float mAproB = constrain(map(AprogressBlue, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
+
+    fill(255, 0, 0, 10);
+    rect(50, 10, mAproR, 15);
+    fill(0, 0, 255, 10);
+    rect(50, 26, mAproB, 15);
+
+    noFill();
   }
 
 
@@ -96,7 +111,7 @@ class ProgessBar {
 
 
       if (G.Wp.UpgadeBlocker[0] <= 0) {
-        proW1 = PVector.add(G.level.WorkPower[0], G.Wp.upgradeW1);
+        proW1 = G.level.WorkPower[0].add(G.Wp.upgradeW1);
       }
 
       if (G.Wp.UpgadeBlocker[1] <= 0) {   

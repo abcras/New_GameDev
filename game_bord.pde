@@ -48,15 +48,15 @@ class GameBoard {
     textAlign(CENTER);
     textSize(25);
 
-    text("W4", width*3/16, height*3/8);
-    text("W3", width*5/16, height*5/8);
     text("W1", width/16, height*5/8);
     text("W2", width*3/16, height*7/8);
+    text("W3", width*5/16, height*5/8);
+    text("W4", width*3/16, height*3/8);
 
-    text("W4", width*13/16, height*3/8);
-    text("W3", width*15/16, height*5/8);
     text("W1", width*11/16, height*5/8);
     text("W2", width*13/16, height*7/8);
+    text("W3", width*15/16, height*5/8);
+    text("W4", width*13/16, height*3/8);
 
     text("Trash"+"\n"+"can", width*22/32, height*11/32);
     text("P1", width*3/16, height*5/8);
@@ -149,7 +149,6 @@ class GameBoard {
         GO= true;
         t = 0;
       }
-    }    
-   
+    }
   }
 }

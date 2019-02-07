@@ -390,6 +390,7 @@ class LogikWC {
       G.Wp.work = true;
       t++;
       G.Wp.t = 4;
+      G.Wp.aninmation = G.Wp.aninmation+1;
       action=true;
       G.Wp.UpgadeBlocker[0]--; 
       G.Wp.UpgadeBlocker[1]--; 
@@ -401,9 +402,9 @@ class LogikWC {
         G.Pb.t=1;
         t = 0;
         G.level.time++;
-
+        G.Wp.aninmation = 0;
         G.Wp.progessing = true;
-    
+
         G.Pb.t=1;
 
         t = 0;

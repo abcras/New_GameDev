@@ -39,7 +39,7 @@ class Level {
       //this is level ones data. Copy and change this and you have a new level
       frameCount = 0;
 
-      WinScore = new PVector(1200, 1200);
+      WinScore = new PVector(1000, 1000);
       tasknr = 5;
       interations = 10;
       WorkPower[0] = new PVector(200, 90);      
@@ -70,7 +70,7 @@ class Level {
     case 1:  
       //this is level tows data. Copy and change this and you have a new level
       frameCount = 0;
-      WinScore = new PVector(3500, 3500);
+      WinScore = new PVector(900, 900);
       tasknr = 5;
       interations = 10;
       WorkPower[0] = new PVector(105, 150);      
@@ -100,7 +100,7 @@ class Level {
     case 2:
       //this is level tres data. Copy and change this and you have a new level
       frameCount = 0;
-      WinScore = new PVector(3500, 500);
+      WinScore = new PVector(3200, 850);
       tasknr = 5;
       interations = 15;
       WorkPower[0] = new PVector(50, 400);      
@@ -130,7 +130,7 @@ class Level {
     case 3:
       //this is level fours data. Copy and change this and you have a new level
       frameCount = 0;
-      WinScore = new PVector(999999, 999999);
+      WinScore = new PVector(123750, 123750);
       tasknr = 3;
       interations = 30;
       WorkPower[0] = new PVector(2000, 2000);      
@@ -160,7 +160,7 @@ class Level {
     case 4:
       //this is level fives data. Copy and change this and you have a new level
       frameCount = 0;
-      WinScore = new PVector(3000, 3000);
+      WinScore = new PVector(1750, 1750);
       tasknr = 20;
       interations = 5;
       WorkPower[0] = new PVector(200, 90);      
@@ -191,7 +191,7 @@ class Level {
     case 5:
       //this is level siks' data. Copy and change this and you have a new level
       frameCount = 0;
-      WinScore = new PVector(3000, 3000);
+      WinScore = new PVector(2450, 2450);
       tasknr = 20;
       interations = 7;
       WorkPower[0] = new PVector(200, 90);      

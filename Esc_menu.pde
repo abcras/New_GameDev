@@ -14,7 +14,6 @@ class escMenu {
       //this is the continue button.
       chol[0] = 0;
       Opt[0] = true;
- 
     } else {
       chol[0] = 255;
       Opt[0] = false;
@@ -140,7 +139,7 @@ class escMenu {
       G.Wp.UpgadeBlocker[2]=0;   
       G.Wp.UpgadeBlocker[3]=0;
       G.level.time=1;
-      println("hej");
+      G.Wc.t=0;
       es = false;
     }
     //Hvis ESC bliver trykket åbner det menuen og lukker den efter om menuen er åben eller ej
