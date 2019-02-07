@@ -291,7 +291,7 @@ class LoadGame {
       if (mouseX >= width*11/16 && mouseX <= width*14/16 && mouseY >= height*5/8 && mouseY <= height*7/8 && t >= 30) {
         chol[11] = 0;
         LVL[11] = true;  
-        println("hej");
+   
       } else {
         chol[11] = 255;
         LVL[11] = false;
