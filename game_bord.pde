@@ -76,8 +76,8 @@ class GameBoard {
 
     text("Task Requirements", 400, 320);
     if (GO) {
-      text(int(G.Wp.task[G.Wp.tasknr].x)+" Red", width*4/8, 350);
-      text(int(G.Wp.task[G.Wp.tasknr].y)+" Blue", width*4/8, 370);
+      text(int(G.level.task[G.Wp.tasknr].x)+" Red", width*4/8, 350);
+      text(int(G.level.task[G.Wp.tasknr].y)+" Blue", width*4/8, 370);
     }
     noFill();
     textAlign(LEFT);

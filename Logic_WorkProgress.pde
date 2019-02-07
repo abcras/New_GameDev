@@ -8,7 +8,7 @@ class LogikWP {
   float[] DayProgressR = new float[5]; 
   float[] DayProgressB = new float[5];
 
-  PVector[] task = new PVector[10];
+
   PVector taskW1 = new PVector(0, 0);  
   PVector taskW2 = new PVector(0, 0);  
   PVector taskW3 = new PVector(0, 0);  
@@ -33,22 +33,13 @@ class LogikWP {
 
 
 
-    task[0] = new PVector(10, 5);
-    task[1] = new PVector(5, 10);
-    task[2] = new PVector(10, 15);
-    task[3] = new PVector(15, 10);
-    task[4] = new PVector(20, 15); 
-    task[5] = new PVector(15, 20);
-    task[6] = new PVector(20, 25);
-    task[7] = new PVector(25, 20);
-    task[8] = new PVector(30, 25);
-    task[9] = new PVector(25, 30); 
+
 
 
     if (work) {
       if (UpgadeBlocker[0] <= 0 && G.Wc.TaskW1 == 1) {
         //if (G.Wc.TaskW1 == 1 && work) {
-        taskW1 = PVector.add(taskW1, task[tasknr]);     
+        taskW1 = PVector.add(taskW1, G.level.task[tasknr]);     
         G.Wc.TaskW1 = 0;
 
         //println("hej");
@@ -57,7 +48,7 @@ class LogikWP {
 
 
       if (UpgadeBlocker[1] <= 0 && G.Wc.TaskW2 == 1) {
-        taskW2 = PVector.add(taskW2, task[tasknr]);     
+        taskW2 = PVector.add(taskW2, G.level.task[tasknr]);     
         G.Wc.TaskW2 = 0;
       }
 
@@ -65,7 +56,7 @@ class LogikWP {
 
 
       if (UpgadeBlocker[2] <= 0 && G.Wc.TaskW3 == 1) {
-        taskW3 = PVector.add(taskW3, task[tasknr]);   
+        taskW3 = PVector.add(taskW3, G.level.task[tasknr]);   
         G.Wc.TaskW3 = 0;
       }
 
@@ -73,7 +64,7 @@ class LogikWP {
 
 
       if (UpgadeBlocker[3] <= 0 && G.Wc.TaskW4 == 1) {
-        taskW4 = PVector.add(taskW4, task[tasknr]);
+        taskW4 = PVector.add(taskW4, G.level.task[tasknr]);
         G.Wc.TaskW4 = 0;
       }
       work = false;

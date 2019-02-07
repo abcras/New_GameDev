@@ -111,16 +111,16 @@ class ProgessBar {
 
 
       // println(curW1.y-G.Wp.task[G.Wp.tasknr].y);
-      if (int(curW1.x-G.Wp.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.Wp.task[G.Wp.tasknr].y) > 4) {
+      if (int(curW1.x-G.level.task[G.Wp.tasknr].x) > 4 && int(curW1.y-G.level.task[G.Wp.tasknr].y) > 4) {
         curW1 = PVector.sub(proW1, G.Wp.taskW1);
       }
-      if (int(curW2.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.Wp.task[G.Wp.tasknr].y) > 0) {    
+      if (int(curW2.x-G.level.task[G.Wp.tasknr].x) > 0 && int(curW2.y-G.level.task[G.Wp.tasknr].y) > 0) {    
         curW2 = PVector.sub(proW2, G.Wp.taskW2);
       } 
-      if (int(curW3.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW3.y-G.Wp.task[G.Wp.tasknr].y) > 0) { 
+      if (int(curW3.x-G.level.task[G.Wp.tasknr].x) > 0 && int(curW3.y-G.level.task[G.Wp.tasknr].y) > 0) { 
         curW3 = PVector.sub(proW3, G.Wp.taskW3);
       } 
-      if (int(curW4.x-G.Wp.task[G.Wp.tasknr].x) > 0 && int(curW4.y-G.Wp.task[G.Wp.tasknr].y) > 0) {
+      if (int(curW4.x-G.level.task[G.Wp.tasknr].x) > 0 && int(curW4.y-G.level.task[G.Wp.tasknr].y) > 0) {
         curW4 = PVector.sub(proW4, G.Wp.taskW4);
       }
     }
@@ -241,7 +241,7 @@ class ProgessBar {
         fill(255);
         textFont(f, 13);
         text(curW4.x+" Red", 13, 78);
-        text(curW4.x+" Blue", 13, 94);
+        text(curW4.y+" Blue", 13, 94);
       }
 
 
