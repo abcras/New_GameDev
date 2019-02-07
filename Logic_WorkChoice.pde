@@ -403,7 +403,7 @@ class LogikWC {
         G.level.time++;
 
         G.Wp.progessing = true;
-        G.level.time++;
+    
         G.Pb.t=1;
 
         t = 0;

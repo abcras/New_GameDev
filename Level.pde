@@ -39,7 +39,7 @@ class Level {
       //this is level ones data. Copy and change this and you have a new level
       frameCount = 0;
 
-      WinScore = new PVector(2500, 2500);
+      WinScore = new PVector(1200, 1200);
       tasknr = 5;
       interations = 10;
       WorkPower[0] = new PVector(200, 90);      

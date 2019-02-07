@@ -20,11 +20,12 @@ class LogikWP {
 
   int tasknr;
   int upgradenr;
-
+  PFont f;
 
 
 
   LogikWP() {
+    f = createFont("arial", 16, true);
   }
 
   void task() {
@@ -84,16 +85,13 @@ class LogikWP {
         UpgadeBlocker[0]=int(G.level.UpgradePower[upgradenr].z);
       }
       if ( G.Wc.UpgadeW2 &&  UpgadeBlocker[0]==0) {
-        UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);  
-      
+        UpgadeBlocker[1]=int(G.level.UpgradePower[upgradenr].z);
       }
       if ( G.Wc.UpgadeW3 &&   UpgadeBlocker[2]==0) { 
-        UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);  
-      
+        UpgadeBlocker[2]=int(G.level.UpgradePower[upgradenr].z);
       }
       if ( G.Wc.UpgadeW4 && UpgadeBlocker[3]==0) { 
-        UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);  
-       
+        UpgadeBlocker[3]=int(G.level.UpgradePower[upgradenr].z);
       }  
       G.Wc.action=false;
     }  
@@ -109,6 +107,28 @@ class LogikWP {
     }
     if (UpgadeBlocker[3] < 0) {
       UpgadeBlocker[3] = 0;
+    }
+
+
+    fill(0);
+    textAlign(CENTER);
+    textSize(25);
+    if (UpgadeBlocker[0] > 0) {
+
+      text("xW1x", width/16, height*5/8);
+      text("xW1x", width*11/16, height*5/8);
+    }
+    if (UpgadeBlocker[1] > 0 ) {
+      text("xW2x", width*3/16, height*7/8); 
+      text("xW2x", width*13/16, height*7/8);
+    }
+    if (UpgadeBlocker[2] > 0) { 
+      text("xW3x", width*5/16, height*5/8); 
+      text("xW3x", width*15/16, height*5/8);
+    }
+    if (UpgadeBlocker[3] > 0) { 
+      text("xW4x", width*3/16, height*3/8);
+      text("xW4x", width*13/16, height*3/8);
     }
   }
 
@@ -219,7 +239,7 @@ class LogikWP {
     upgrade();
     upgradeblock();
     addProgerss();
-  
+
     task() ;
   }
 }
