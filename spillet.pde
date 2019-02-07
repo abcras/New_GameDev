@@ -121,7 +121,7 @@ class Game {
     //println(Lg.chol);
   //  println(continu);
       level.run();
-    skift();//det er en place holder
+    skift();
     switch (loc) {
 
     case -1: 
