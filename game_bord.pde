@@ -8,7 +8,6 @@ class GameBoard {
   void PlayerField() {
 
     //this draws the stuff
-    //this is a mess
     //Maybe an array of variables would have been better
 
     f = createFont("arial", 16, true);
