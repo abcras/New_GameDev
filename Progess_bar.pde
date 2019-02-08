@@ -44,7 +44,18 @@ class ProgessBar {
 
 
     //progressRed = 0;
-    //progressBlue = 0;
+    //progressBlue = 0; 
+    //if (G.Wc.t == G.level.tasknr-1) {
+    //  float mAproR = constrain(map(AprogressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
+    //  float mAproB = constrain(map(AprogressBlue, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
+
+    //  fill(255, 0, 0, 10);
+    //  rect(50, 10, mAproR, 15);
+    //  fill(0, 0, 255, 10);
+    //  rect(50, 26, mAproB, 15);
+
+    //  noFill();
+    //}
 
 
     float mproR = constrain(map(AprogressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
@@ -69,18 +80,6 @@ class ProgessBar {
     textFont(f, 13);
     text(progressRed+" Red", 53, 23);
     text(progressBlue+" Blue", 53, 39);
-
-
-
-    float mAproR = constrain(map(AprogressRed, 0, G.level.WinScore.x*2, 0, width-100), 0, width-100);
-    float mAproB = constrain(map(AprogressBlue, 0, G.level.WinScore.y*2, 0, width-100), 0, width-100);
-
-    fill(255, 0, 0, 10);
-    rect(50, 10, mAproR, 15);
-    fill(0, 0, 255, 10);
-    rect(50, 26, mAproB, 15);
-
-    noFill();
   }
 
 

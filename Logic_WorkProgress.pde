@@ -235,42 +235,41 @@ class LogikWP {
     }
 
 
-    if (aninmation == G.level.tasknr-1) {
-      aninmation = 90;
-    }
-    if (aninmation >= 90 && aninmation <= 100) {
-      G.Pb.AprogressRed = int(DayProgressR[0]);
-      G.Pb.AprogressBlue = int(DayProgressB[0]);
-      aninmation++;
-    }
-    if (aninmation >= 100 && aninmation <= 110) {
-      G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]);
-      G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]);
-      aninmation++;
-    } 
-    if (aninmation >= 110 && aninmation <= 120) {
-      G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+DayProgressR[2]);
-      G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+DayProgressB[2]);
-      aninmation++;
-    }
-    if (aninmation >= 120 && aninmation <= 130) {
-      G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]);
-      G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]);
-      aninmation++;
-    }
-    if (aninmation >= 130) {
-      G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]+G.level.task[tasknr].x);
-      G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]+G.level.task[tasknr].y);
-      G.Pb.AprogressRed = 0;
-      G.Pb.AprogressBlue = 0;
+    //if (aninmation == G.level.tasknr-1) {
+    //  aninmation = 90;
+    //}
+    //if (aninmation >= 90 && aninmation <= 100) {
+    //  G.Pb.AprogressRed = int(DayProgressR[0]+G.Pb.progressRed );
+    //  G.Pb.AprogressBlue = int(DayProgressB[0]+G.Pb.progressBlue);
+    //  aninmation++;
+    //}
+    //if (aninmation >= 100 && aninmation <= 110) {
+    //  G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+G.Pb.progressRed);
+    //  G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+G.Pb.progressBlue);
+    //  aninmation++;
+    //} 
+    //if (aninmation >= 110 && aninmation <= 120) {
+    //  G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+G.Pb.progressRed);
+    //  G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+G.Pb.progressBlue);
+    //  aninmation++;
+    //}
+    //if (aninmation >= 120 && aninmation <= 130) {
+    //  G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]+G.Pb.progressRed);
+    //  G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]+G.Pb.progressBlue);
+    //  aninmation++;
+    //}
+    //if (aninmation >= 130) {
+    //  G.Pb.AprogressRed = int(DayProgressR[0]+DayProgressR[1]+DayProgressR[2]+DayProgressR[3]+G.level.task[tasknr].x+G.Pb.progressRed);
+    //  G.Pb.AprogressBlue = int(DayProgressB[0]+DayProgressB[1]+DayProgressB[2]+DayProgressB[3]+G.level.task[tasknr].y+G.Pb.progressBlue);
+    //  G.Pb.AprogressRed = 0;
+    //  G.Pb.AprogressBlue = 0;
 
-      aninmation = 90;
-    }
-
-
+    //  aninmation = 90;
+    //}
 
 
-    println(aninmation, G.Pb.AprogressRed, G.Pb.AprogressBlue); 
+
+  
 
 
     if (G.Wc.action1) {
